@@ -1,0 +1,17 @@
+.dropdown-toggle, .dropdown-item {
+    cursor: pointer;
+}
+/* .nav-item {
+    font-weight: 600;
+} */
+.badge-pill {
+    margin-left: 5px;
+}
+.fa-user {
+    margin-right: 10px;
+}
+.hello {
+    color: #132d4a;
+    font-weight: 600;
+    font-size: 0.9rem;
+}

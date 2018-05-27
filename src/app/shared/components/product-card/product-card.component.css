@@ -1,0 +1,28 @@
+.card { 
+    margin-bottom: 30px;
+  }
+  
+  .card-img-top { 
+    height: 225px;
+    background-size: cover;
+    background-position: top;
+  }
+  
+  .card-footer {
+    padding: 0;
+    background: #fff;
+  }
+  
+  .card-footer button {
+    cursor: pointer;
+    font-weight: 500;
+    /* text-transform: uppercase; */
+  }
+  .fa-cart-plus {
+    margin-right: 10px;
+  }
+  .category-logo {
+    height: 50px;
+    float: right;
+    top: 0;
+  }

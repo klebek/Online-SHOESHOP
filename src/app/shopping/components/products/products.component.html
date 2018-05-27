@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-3">
+    <product-filter [category]="category"></product-filter>
+  </div>
+  <div class="col">
+
+    <div class="row">
+      <div class="col search-input">
+        <div class="input-group">
+          <input [(ngModel)]="searchText" class="form-control py-2 border-right-0 border" placeholder="Search by name">
+          <span class="input-group-append">
+            <div class="input-group-text bg-transparent">
+              <i class="fa fa-search"></i>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row" *ngIf="cart$ | async as cart">
+      <ng-container *ngFor="let p of filteredProducts | title : searchText; let i = index">
+        <div class="col-6">
+          <product-card [product]="p" [shopping-cart]="cart"></product-card>
+        </div>
+        <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>
