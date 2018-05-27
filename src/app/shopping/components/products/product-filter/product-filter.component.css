@@ -5,3 +5,31 @@
 .form-control {
     margin: 5px 0 5px;
 }
+.thumbnail {
+    font-family: "adineuePROKZ-Black";
+    position: relative;
+    margin-top: 30px;
+}
+.caption {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+.text-danger {
+    font-size: 56px;
+}
+.small-text {
+    font-family: "adineuePROKZ-Bold";
+    font-size: 18px;
+}
+.img-thumbnail {
+    padding: 0;
+}
+.btn-default {
+    color: 161616;
+    background: white;
+    outline: 0;
+    margin-top: 15px;
+}

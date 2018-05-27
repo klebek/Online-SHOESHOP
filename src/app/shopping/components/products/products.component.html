@@ -5,6 +5,19 @@
   <div class="col">
 
     <div class="row">
+      <div class="col">
+        <div class="thumbnail text-center">
+          <img src="../../../../assets/images/carousel/carousel_2.jpg" alt="" class="img-responsive img-thumbnail">
+          <div class="caption">
+            <p class="small-text">
+              GIVE BACK YOUR OLD SNEAKERS AND GET THE NEW ONE<br />
+            <button class="btn btn-default">GET COUPON</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col search-input">
         <div class="input-group">
           <input [(ngModel)]="searchText" class="form-control py-2 border-right-0 border" placeholder="Search by name">
@@ -20,10 +33,10 @@
 
     <div class="row" *ngIf="cart$ | async as cart">
       <ng-container *ngFor="let p of filteredProducts | title : searchText; let i = index">
-        <div class="col-6">
+        <div class="col-4">
           <product-card [product]="p" [shopping-cart]="cart"></product-card>
         </div>
-        <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+        <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
       </ng-container>
     </div>
   </div>

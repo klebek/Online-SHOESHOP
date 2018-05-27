@@ -29,7 +29,7 @@ import { UserService } from './services/user.service';
   ],
   declarations: [
     ProductCardComponent,
-    ProductQuantityComponent,
+    ProductQuantityComponent
   ],
   exports: [
     ProductCardComponent,

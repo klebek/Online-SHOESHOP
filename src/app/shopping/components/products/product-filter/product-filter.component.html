@@ -1,18 +1,24 @@
 <div class="sticky-top">
   <div class="list-group">
-    <a
-      class="list-group-item list-group-item-action"
-      [class.active]="!category"
-      routerLink="/"
-      >All Categories</a>
-    <a 
-      *ngFor="let c of categories$ | async"
-      routerLink="/"
-      [queryParams]="{ category: c.$key }"
-      class="list-group-item list-group-item-action"
+    <a class="list-group-item list-group-item-action" [class.active]="!category" routerLink="/">All Categories</a>
+    <a *ngFor="let c of categories$ | async" routerLink="/" [queryParams]="{ category: c.$key }" class="list-group-item list-group-item-action"
       [class.active]="category === c.$key">
-          {{ c.name }}
+      {{ c.name }}
     </a>
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="thumbnail text-center">
+        <img src="../../../../assets/images/carousel/carousel_1.jpg" alt="" class="img-responsive img-thumbnail">
+        <div class="caption">
+          <p class="small-text">
+            FOR EVERY SECOND
+            <br /> PAIR OF SNEAKERS
+          </p>
+          <span class="text-danger">-50%</span><br />
+          <button class="btn btn-default">CHECK THIS OUT</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

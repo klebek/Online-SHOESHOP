@@ -2,17 +2,35 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700,900');
 
 $primary-color: #132d4a;
 $primary-color-hover: #10263e;
 
+@font-face {
+  font-family: "adineuePROKZ-Black";
+  src: url('.//assets/font/adineuePROKZ-Black.woff');
+}
+
+@font-face {
+  font-family: "adineuePROKZ-Bold";
+  src: url('.//assets/font/adineuePROKZ-Bold.woff');
+}
+
+@font-face {
+  font-family: "adineuePROKZ-Light";
+  src: url('.//assets/font/adineuePROKZ-Light.woff');
+}
 
 body { 
   padding-top: 80px;
   font-family: 'IBM Plex Sans', sans-serif;
   background-image: url('assets/images/bg.jpg');
   background-repeat: repeat;
+}
+
+.container {
+  max-width: 1480px;
 }
 
 h1, h2, h3 { 
