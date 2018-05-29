@@ -1,16 +1,23 @@
-<div *ngIf="product.title" class="card">
-  <div *ngIf="product.imageUrl" [style.backgroundImage]="'url(' + product.imageUrl + ')'" class="card-img-top"></div>
-  <div class="card-body">
-      <h5 class="card-title">{{ product.title }}</h5>
-    <div class="row">
-      <div class="col-sm-8">
-        <p class="card-text">{{ product.price | currency:'USD':'symbol'}}</p>
-      </div>
-      <div *ngIf="category$ | async as category" class="col-sm">
-        <img [src]="category.logo" class="category-logo">
-      </div>
+<div class="card">
+  <a [routerLink]="['/product/', product.$key]">
+    <div *ngIf="product.imageUrl" [style.backgroundImage]="'url(' + product.imageUrl + ')'" class="card-img-top">
     </div>
-  </div>
+  </a>
+  <div *ngIf="showDetails && shoppingCart">
+      <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['/product/', product.$key]">{{ product.title }}</a>
+          </h5>
+          <div class="row">
+            <div class="col-sm-8">
+              <p class="card-text">{{ product.price | currency:'USD':'symbol'}}</p>
+            </div>
+            <div *ngIf="category$ | async as category" class="col-sm">
+              <img [src]="category.logo" class="category-logo">
+            </div>
+          </div>
+        </div>
+      </div>
   <div *ngIf="showActions && shoppingCart" class="card-footer">
     <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
       <i class="fa fa-cart-plus"></i>Add to Cart</button>
@@ -20,4 +27,5 @@
       </product-quantity>
     </ng-template>
   </div>
+
 </div>

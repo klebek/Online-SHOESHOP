@@ -10,3 +10,10 @@ td {
 .td-quantity {
     text-align: center;
 }
+.table {
+    width: 900px;
+}
+.col {
+    display: flex;
+    justify-content: center;
+}

@@ -15,6 +15,7 @@ import { AuthGuard } from 'shared/services/auth-guard.service';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'shared/shared.module';
 import { TitlePipe } from './components/products/pipes/title.pipe';
+import { ProductDetailsComponent } from 'shared/components/product-details/product-details.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { TitlePipe } from './components/products/pipes/title.pipe';
       { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
       { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuard] },
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
+      { path: 'product/:id', component: ProductDetailsComponent, canActivate: [AuthGuard] },
       { path: 'my/orders/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] },
     ])
   ],
@@ -38,7 +40,8 @@ import { TitlePipe } from './components/products/pipes/title.pipe';
     ShoppingCartSummaryComponent,
     ShoppingFormComponent,
     OrderDetailsComponent,
-    TitlePipe
+    TitlePipe,
+    ProductDetailsComponent
   ]
 })
 export class ShoppingModule { }

@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col">
+            <h1>
+              <i class="fa fa-info-circle"></i> Product</h1>
+    <div class="thumbnail text-center">
+      <img src="../../../../assets/images/carousel/carousel_4.jpg" alt="" class="img-responsive img-thumbnail">
+      <div class="caption">
+        <p class="small-text">
+          CHECK OUR SALES
+          <br /> IT ENDS SOON
+        </p>
+        <!-- <span class="text-danger">-50%</span><br /> -->
+        <button class="btn btn-default">CHECK</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="card text-center" *ngIf="product | async as product">
+      <div class="card-header">
+        Information of the product
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-7">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <!-- <p class="card-text">Brand: <img [src]="category.image" alt=""></p> -->
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div class="col" *ngIf="cart$ | async as cart">
+            <product-card [product]="product" [show-details]="false" [shopping-cart]="cart"></product-card>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        2 days ago
+      </div>
+    </div>
+  </div>
+</div>

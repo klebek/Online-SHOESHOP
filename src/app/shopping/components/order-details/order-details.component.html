@@ -1,53 +1,38 @@
-<table class="table" *ngIf="order$ | async as order">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Product</th>
-            <th class="text-center" style="width: 230px">Quantity</th>
-            <th class="text-right" style="width: 230px">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of order.items">
-            <td>
-              <div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail"></div>
-            </td>
-            <td>
-              {{ item.product.title }}
-            </td>
-            <td class="td-quantity">
-              {{ item.quantity }}
-            </td>
-            <td class="text-right">
-              {{ item.product.price * item.quantity | currency:'USD':'symbol'}}
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </tfoot>
-      </table>
-  <!-- <div class="card-body">
-    <h5 class="card-title">Your Order</h5>
-    <p class="card-text">You ordered {{ order.items.length }} items</p>
-    <ul class="list-group list-group-flush">
-      <li *ngFor="let item of order.items" class="list-group-item">
-          <div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail"></div>
-          {{ item.product.title }}
-        <div class="float-right">
-         {{ item.product.price | currency:'USD':'symbol' }}
-        </div>
-      </li>
-      <li class="list-group-item font-weight-bold">
-        Total
-        <div class="float-right">
-          {{ order.items.totalPrice | currency:'USD':'symbol' }}
-        </div>
-      </li>
-    </ul>
-  </div> -->
+<div class="row">
+  <div class="col">
+    <table class="table" *ngIf="order$ | async as order">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th class="text-center" style="width: 230px">Quantity</th>
+          <th class="text-right" style="width: 230px">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order.items">
+          <td>
+            <div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail"></div>
+          </td>
+          <td>
+            {{ item.product.title }}
+          </td>
+          <td class="td-quantity">
+            {{ item.quantity }}
+          </td>
+          <td class="text-right">
+            {{ item.product.price * item.quantity | currency:'USD':'symbol'}}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

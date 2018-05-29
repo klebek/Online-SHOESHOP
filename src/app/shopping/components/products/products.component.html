@@ -30,8 +30,7 @@
       </div>
     </div>
 
-
-    <div class="row" *ngIf="cart$ | async as cart">
+    <div class="row row-products" *ngIf="cart$ | async as cart">
       <ng-container *ngFor="let p of filteredProducts | title : searchText; let i = index">
         <div class="col-4">
           <product-card [product]="p" [shopping-cart]="cart"></product-card>

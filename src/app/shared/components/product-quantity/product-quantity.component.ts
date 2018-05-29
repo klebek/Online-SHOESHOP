@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'shared/models/product';
+import { ShoppingCart } from 'shared/models/shopping-cart';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 export class ProductQuantityComponent {
 
   @Input('product') product: Product;
-  @Input('shopping-cart') shoppingCart;
+  @Input('shopping-cart') shoppingCart: ShoppingCart;
   
   constructor(private cartService: ShoppingCartService) { }
 
