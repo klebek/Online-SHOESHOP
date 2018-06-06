@@ -25,6 +25,7 @@ export class OrderService {
     return this.db.object('/orders/' + orderId);
   }
 
+
   private async getOrderId(): Promise<string> {
     let orderId = localStorage.getItem('orderId');
     return orderId;

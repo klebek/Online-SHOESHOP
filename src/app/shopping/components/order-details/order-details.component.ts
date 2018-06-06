@@ -2,6 +2,7 @@ import { OrderService } from 'shared/services/order.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { ShoppingCart } from 'shared/models/shopping-cart';
 
 @Component({
   selector: 'order-details',

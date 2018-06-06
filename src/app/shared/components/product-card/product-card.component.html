@@ -3,6 +3,15 @@
     <div *ngIf="product.imageUrl" [style.backgroundImage]="'url(' + product.imageUrl + ')'" class="card-img-top">
     </div>
   </a>
+  <div *ngIf="showActions && shoppingCart" class="card-footer">
+    <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
+      <i class="fa fa-cart-plus"></i>Add to Cart</button>
+    <ng-template #updateQuantity>
+      <product-quantity [product]="product" [shopping-cart]="shoppingCart">
+
+      </product-quantity>
+    </ng-template>
+  </div>
   <div *ngIf="showDetails">
     <div class="card-body">
       <h5 class="card-title">
@@ -24,14 +33,4 @@
       </div>
     </div>
   </div>
-  <div *ngIf="showActions && shoppingCart" class="card-footer">
-    <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
-      <i class="fa fa-cart-plus"></i>Add to Cart</button>
-    <ng-template #updateQuantity>
-      <product-quantity [product]="product" [shopping-cart]="shoppingCart">
-
-      </product-quantity>
-    </ng-template>
-  </div>
-
 </div>

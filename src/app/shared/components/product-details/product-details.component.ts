@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'shared/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import { ShoppingCart } from 'shared/models/shopping-cart';
 import { Product } from 'shared/models/product';
 import { CategoryService } from 'shared/services/category.service';
-import { Category } from 'shared/models/category';
 import { Subscription } from 'rxjs';
 import { AppUser } from 'shared/models/app-user';
 import { AuthService } from 'shared/services/auth.service';
@@ -16,7 +15,7 @@ import { AuthService } from 'shared/services/auth.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit, OnDestroy {
+export class ProductDetailsComponent implements OnInit {
   
   id;
   appUser: AppUser;
@@ -33,6 +32,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     private cartService: ShoppingCartService,
     private categoryService: CategoryService
   ) {
+    this.auth.appUser$.subscribe(appUser => this.appUser = appUser);
     this.id = this.route.snapshot.params['id'];
     this.subscription = this.productService.get(this.id).subscribe(product => {
       this.product = product;
@@ -41,12 +41,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
-    this.auth.appUser$.subscribe(appUser => this.appUser = appUser);
     this.cart$ = await this.cartService.getCart();
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
 }

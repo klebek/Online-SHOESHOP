@@ -31,7 +31,14 @@
               </div>
             </div>
             <p class="product-details">{{ product.details }}</p>
-            <h4>Price: {{ product.price * (1 - (product.discount / 100)) | currency:'USD':'symbol' }}</h4>
+            <p class="card-text" *ngIf="product.discount === 0">{{ product.price | currency:'USD':'symbol'}}</p>
+            <div *ngIf="product.discount > 0">
+              <p>
+                <span class="card-text">Price: </span><span class="card-text strike-out">{{ product.price | currency:'USD':'symbol'}}</span>
+                <span class="card-text badge badge-danger">{{ product.price * (1 - (product.discount / 100)) | currency:'USD':'symbol'}}</span>
+                <span class="red-text">You save {{ product.discount }}%</span>
+              </p>
+            </div>
           </div>
           <div class="col" *ngIf="cart$ | async as cart">
             <product-card [product]="product" [show-details]="false" [shopping-cart]="cart"></product-card>
@@ -42,10 +49,10 @@
         <a routerLink="/">
           <button class="btn btn-continue">Continue shopping</button>
         </a>
-        <ng-container *ngIf="appUser.isAdmin">
-            <a routerLink="/">
-              <a [routerLink]="['/admin/products/', product.$key]"><button class="btn btn-sm btn-primary">Edit</button></a>
-            </a>
+        <ng-container *ngIf="appUser">
+          <a *ngIf="appUser.isAdmin" [routerLink]="['/admin/products/', product.$key]">
+            <button class="btn btn-primary">Edit product</button>
+          </a>
         </ng-container>
       </div>
     </div>
