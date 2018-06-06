@@ -6,6 +6,9 @@
 
 $primary-color: #132d4a;
 $primary-color-hover: #10263e;
+$white-color: white;
+$white-color-hover: #f2f2f2;
+
 
 @font-face {
   font-family: "adineuePROKZ-Black";
@@ -41,20 +44,24 @@ h1, h2, h3 {
 }
 
 .navbar { 
+  background-color: $primary-color;
   border-bottom: 3px solid #e7e7e7;
 }
 
 .navbar-light .navbar-brand {
-  color: $primary-color;
+  color: $white-color;
 }
 
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-  color: $primary-color-hover;
+  color: $white-color;
 }
 
 .list-group-item.active {
   background-color: $primary-color;
   border-color: $primary-color;
+}
+.btn {
+  padding: 0.375rem 0.375rem;
 }
 
 .btn-primary {
@@ -74,4 +81,10 @@ h1, h2, h3 {
 
 .form-control:focus {
   border-color: $primary-color;
+}
+.dropdown-item.active, .dropdown-item:active {
+  background-color: $primary-color;
+}
+.dropdown-item:hover {
+  background-color: $white-color-hover;
 }

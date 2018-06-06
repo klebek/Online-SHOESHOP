@@ -20,4 +20,5 @@ export class UserService {
   get(uid: string): FirebaseObjectObservable<AppUser> {
     return this.db.object('/users/' + uid);
   }
+  
 }

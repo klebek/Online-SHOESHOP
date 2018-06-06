@@ -3,7 +3,7 @@
   }
   
   .card-img-top { 
-    height: 225px;
+    height: 200px;
     background-size: cover;
     background-position: top;
   }
@@ -29,4 +29,11 @@
   a {
     text-decoration: none;
     color: #132d4a;
+  }
+  .strike-out {
+    text-decoration: line-through;
+  }
+  .badge-danger {
+    margin-left: 10px;
+    font-size: 1.2rem;
   }

@@ -1,8 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" routerLink="/">
-      <!-- <i class="fa fa-leaf"></i> -->
-      <!-- <img src="../../../../assets/images/logo.png" /> -->
       shoeshop
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
@@ -14,10 +12,16 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-cart">
-            <i class="fa fa-shopping-cart"></i>
-            <span class="badge badge-warning badge-pill-active" [class.badge-pill-none]="cart.totalItemsCount === 0" *ngIf="cart$ | async as cart">
-              {{ cart.totalItemsCount }}
-            </span>
+            <div class="row">
+              <div class="col-3">
+                <i class="fa fa-shopping-cart"></i>
+              </div>
+              <div class="col" *ngIf="cart$ | async as cart">
+                <span class="badge badge-warning badge-pill-active" *ngIf="cart.totalItemsCount">
+                  {{ cart.totalItemsCount }}
+                </span>
+              </div>
+            </div>
           </a>
         </li>
       </ul>
@@ -25,7 +29,9 @@
       <ul class="navbar-nav">
         <ng-template #anonymousUser>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login"><span class="hello">Login</span></a>
+            <a class="nav-link" routerLink="/login">
+              <span class="hello">Login</span>
+            </a>
           </li>
         </ng-template>
         <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
@@ -43,10 +49,6 @@
           </div>
         </li>
       </ul>
-      <!-- <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
     </div>
   </div>
 </nav>

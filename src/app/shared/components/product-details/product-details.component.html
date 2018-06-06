@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col">
-            <h1>
-              <i class="fa fa-info-circle"></i> Product</h1>
+    <h1>
+      <i class="fa fa-info-circle"></i> Product</h1>
     <div class="thumbnail text-center">
       <img src="../../../../assets/images/carousel/carousel_4.jpg" alt="" class="img-responsive img-thumbnail">
       <div class="caption">
@@ -15,24 +15,38 @@
     </div>
   </div>
   <div class="col-9">
-    <div class="card text-center" *ngIf="product | async as product">
+    <div class="card text-center">
       <div class="card-header">
-        Information of the product
+        Details
       </div>
-      <div class="card-body">
+      <div class="card-body" *ngIf="product">
         <div class="row">
-          <div class="col-7">
-            <h5 class="card-title">{{ product.title }}</h5>
-            <!-- <p class="card-text">Brand: <img [src]="category.image" alt=""></p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="col-8">
+            <div class="row card-brand">
+              <div class="col-2 card-category">
+                <img *ngIf="category" [src]="category.logo" class="category-logo">
+              </div>
+              <div class="col card-title">
+                <h5>{{ product.title }}</h5>
+              </div>
+            </div>
+            <p class="product-details">{{ product.details }}</p>
+            <h4>Price: {{ product.price * (1 - (product.discount / 100)) | currency:'USD':'symbol' }}</h4>
           </div>
           <div class="col" *ngIf="cart$ | async as cart">
             <product-card [product]="product" [show-details]="false" [shopping-cart]="cart"></product-card>
           </div>
         </div>
       </div>
-      <div class="card-footer text-muted">
-        2 days ago
+      <div class="card-footer">
+        <a routerLink="/">
+          <button class="btn btn-continue">Continue shopping</button>
+        </a>
+        <ng-container *ngIf="appUser.isAdmin">
+            <a routerLink="/">
+              <a [routerLink]="['/admin/products/', product.$key]"><button class="btn btn-sm btn-primary">Edit</button></a>
+            </a>
+        </ng-container>
       </div>
     </div>
   </div>

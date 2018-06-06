@@ -10,6 +10,7 @@ import { AdminOrdersComponent } from './components/admin-orders/admin-orders.com
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
+import { OrderFormComponent } from './components/order-form/order-form.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,11 @@ import { AdminAuthGuard } from './services/admin-auth-guard.service';
       {
         path: 'admin/products/:id',
         component: ProductFormComponent,
+        canActivate: [AuthGuard, AdminAuthGuard]
+      },
+      {
+        path: 'admin/orders/:id',
+        component: OrderFormComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
       },
       {
@@ -41,6 +47,7 @@ import { AdminAuthGuard } from './services/admin-auth-guard.service';
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductFormComponent,
+    OrderFormComponent,
   ],
   providers: [
     AdminAuthGuard

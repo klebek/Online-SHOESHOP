@@ -7,10 +7,14 @@ export class ShoppingCartItem {
     imageUrl: String;
     price: number;
     quantity: number;
+    discount: number;
 
     constructor(init?: Partial<ShoppingCartItem>) {
         Object.assign(this, init);
     }
 
-    get totalPrice() { return this.price * this.quantity; }
+    get totalPrice() {
+        let dis = 1 - this.discount / 100; 
+        return this.price * dis * this.quantity;
+    }
 }

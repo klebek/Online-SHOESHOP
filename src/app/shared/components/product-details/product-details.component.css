@@ -29,3 +29,32 @@
     font-family: "adineuePROKZ-Bold";
     font-size: 32px;
   }
+  .card-body {
+    text-align: left;
+  }
+  .product-details {
+    text-align: justify;
+  }
+  .category-logo {
+    height: 50px;
+    margin: 20px 0 20px;
+  }
+  .card-brand {
+    margin-bottom: 15px;
+  }
+  .card-title {
+    position: relative;
+    border-left: solid 2px #f5f5f5;
+    padding-left: 17px;
+  }
+  .card-title h5 {
+    position: absolute;
+   top: 50%;
+   transform: translate(0, -50%);
+  }
+  .card-footer .btn-continue {
+    float: left;
+  }
+  .card-footer .btn-primary {
+    float: right;
+  }

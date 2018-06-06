@@ -1,8 +1,9 @@
 .w-100 {
     width: 50%;
 }
-.search-input {
-    margin: 20px 0 20px;
+.inputs {
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 .py-2 {
     outline: hidden;
@@ -35,4 +36,33 @@
 }
 .row-products {
     margin-top: 10px;
+}
+.form-control:focus {
+    border-color: #ccc;
+    outline: none;
+    box-shadow: none;
+}
+option {
+    font-family: "adineuePROKZ-Bold";
+}
+.color {
+    width: 42px;
+}
+.black {
+    background: black;
+}
+.white {
+    background: white;
+}
+.beige {
+    background: brown;
+}
+.camo {
+    background: saddlebrown;
+}
+.green {
+    background: lightgreen;
+}
+.blue {
+    background: lightskyblue;
 }

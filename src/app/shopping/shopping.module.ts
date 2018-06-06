@@ -15,6 +15,7 @@ import { AuthGuard } from 'shared/services/auth-guard.service';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'shared/shared.module';
 import { TitlePipe } from './components/products/pipes/title.pipe';
+import { ColorPipe } from './components/products/pipes/color.pipe';
 import { ProductDetailsComponent } from 'shared/components/product-details/product-details.component';
 
 @NgModule({
@@ -22,11 +23,11 @@ import { ProductDetailsComponent } from 'shared/components/product-details/produ
     SharedModule,
     RouterModule.forChild([
       { path: 'products', component: ProductsComponent },
+      { path: 'product/:id', component: ProductDetailsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
       { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuard] },
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
-      { path: 'product/:id', component: ProductDetailsComponent, canActivate: [AuthGuard] },
       { path: 'my/orders/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] },
     ])
   ],
@@ -41,6 +42,7 @@ import { ProductDetailsComponent } from 'shared/components/product-details/produ
     ShoppingFormComponent,
     OrderDetailsComponent,
     TitlePipe,
+    ColorPipe,
     ProductDetailsComponent
   ]
 })

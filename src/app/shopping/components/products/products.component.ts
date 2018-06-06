@@ -7,15 +7,17 @@ import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/switchMap";
+import { ColorService } from 'shared/services/color.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit  {
+export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
+  colors;
   filteredProducts: Product[] = [];
   category: string;
   cart$: Observable<ShoppingCart>;
@@ -23,9 +25,11 @@ export class ProductsComponent implements OnInit  {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: ShoppingCartService) { }
+    private cartService: ShoppingCartService,
+    private colorService: ColorService) { }
 
   async ngOnInit() {
+    this.colors = this.colorService.getAll();
     this.cart$ = await this.cartService.getCart();
     this.populateProducts();
   }
