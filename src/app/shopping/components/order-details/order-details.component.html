@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <table class="table" *ngIf="order$ | async as order">
+    <table class="table" *ngIf="orders">
       <thead>
         <tr>
           <th></th>
@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of order.items">
+        <tr *ngFor="let item of orders.items">
           <td>
             <div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail"></div>
           </td>

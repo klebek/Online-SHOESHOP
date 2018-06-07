@@ -22,7 +22,7 @@ export class AuthService {
     this.user$ = afAuth.authState;
   }
 
-  login() {
+  loginGoogle() {
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
@@ -32,6 +32,20 @@ export class AuthService {
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
     this.afAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
+  }
+
+  loginEmailPassword(formLogin, email, password) {
+    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+    localStorage.setItem('returnUrl', returnUrl);
+    this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  registerEmailPassword(formRegister, email, password) {
+    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+    localStorage.setItem('returnUrl', returnUrl);
+    let confirmPassword = formRegister.value.confirmPassword;
+    let name = formRegister.value.name;
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
   logout() {

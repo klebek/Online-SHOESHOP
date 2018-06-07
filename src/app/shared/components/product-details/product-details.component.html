@@ -31,7 +31,7 @@
               </div>
             </div>
             <p class="product-details">{{ product.details }}</p>
-            <p class="card-text" *ngIf="product.discount === 0">{{ product.price | currency:'USD':'symbol'}}</p>
+            <p class="card-text" *ngIf="product.discount === 0">Price: {{ product.price | currency:'USD':'symbol'}}</p>
             <div *ngIf="product.discount > 0">
               <p>
                 <span class="card-text">Price: </span><span class="card-text strike-out">{{ product.price | currency:'USD':'symbol'}}</span>

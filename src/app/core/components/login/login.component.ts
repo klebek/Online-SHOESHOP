@@ -1,6 +1,7 @@
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from 'shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,20 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent {
 
-  constructor(private auth: AuthService, private af: AngularFireAuth) {
+  constructor(private auth: AuthService) {
   }
 
-  login() {
-    this.auth.login();
+  loginGoogle() {
+    this.auth.loginGoogle();
   }
 
-  email: string = "siemanko@gmail.com";
-  password: string = "1234567";
+  loginFb() {
+    this.auth.loginFb();
+  }
 
-  register() {
-    this.af.auth.createUserWithEmailAndPassword(this.email, this.password)
-    .then(authState => console.log('EGISTER-THEN', authState))
-    .catch(error => console.log('REGISTER-ERROR', error));
+  loginEmailPassword(formLogin) {
+    this.auth.loginEmailPassword(formLogin, formLogin.value.email, formLogin.value.password);
+  }
+
+  private register(formRegister) {
+    this.auth.registerEmailPassword(formRegister, formRegister.value.email, formRegister.value.password);  
   }
 
 }

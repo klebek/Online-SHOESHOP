@@ -33,7 +33,9 @@ export class ProductDetailsComponent implements OnInit {
     private categoryService: CategoryService
   ) {
     this.auth.appUser$.subscribe(appUser => this.appUser = appUser);
+
     this.id = this.route.snapshot.params['id'];
+    
     this.subscription = this.productService.get(this.id).subscribe(product => {
       this.product = product;
       this.categoryService.getCategory(this.product.category).subscribe(category => this.category = category);
