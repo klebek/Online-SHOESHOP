@@ -3,16 +3,15 @@
   }
   
   .card-img-top { 
-    height: 200px;
-    background-size: cover;
-    background-position: top;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f6f6f6;
   }
-  
   .card-footer {
     padding: 0;
     background: #fff;
   }
-  
   .card-footer button {
     cursor: pointer;
     font-weight: 500;
@@ -41,3 +40,28 @@
   .btn-secondary {
     border-radius: 0;
   }
+  ngx-gallery /deep/ .ngx-gallery-arrow {
+    color: #6c757d;
+    top: 90%;
+}
+ngx-gallery /deep/ .ngx-gallery-image {
+  height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f6f6f6;
+    /* background-size: auto !important; */
+}
+ngx-gallery /deep/ ngx-gallery-thumbnails {
+  height: 130px !important;
+  margin-top: 0px !important;
+}
+ngx-gallery /deep/ .ngx-gallery-preview-top {
+  top: 85%;
+}
+ngx-gallery /deep/ .ngx-gallery-icon {
+  color: #6c757d;
+}
+ngx-gallery /deep/ .ngx-gallery-preview-top  .ngx-gallery-preview-icons {
+  float: none !important;
+  text-align: center !important;
+}

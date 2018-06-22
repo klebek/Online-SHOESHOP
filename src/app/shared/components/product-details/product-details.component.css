@@ -55,10 +55,10 @@
    top: 50%;
    transform: translate(0, -50%);
   }
-  .card-footer .btn-continue {
+  .card-footer .btn-left {
     float: left;
   }
-  .card-footer .btn-primary {
+  .card-footer .btn-right {
     float: right;
   }
   .strike-out {

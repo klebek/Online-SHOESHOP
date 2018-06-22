@@ -17,6 +17,7 @@ import { SharedModule } from 'shared/shared.module';
 import { TitlePipe } from './components/products/pipes/title.pipe';
 import { ColorPipe } from './components/products/pipes/color.pipe';
 import { ProductDetailsComponent } from 'shared/components/product-details/product-details.component';
+import { ProductInfoComponent } from 'shared/components/product-info/product-info.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { ProductDetailsComponent } from 'shared/components/product-details/produ
     OrderDetailsComponent,
     TitlePipe,
     ColorPipe,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductInfoComponent
   ]
 })
 export class ShoppingModule { }

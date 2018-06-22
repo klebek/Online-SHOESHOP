@@ -12,7 +12,9 @@ export class Order {
             return {
                 product: {
                     title: i.title,
-                    imageUrl: i.imageUrl,
+                    photo1small: i.photo1small,
+                    photo1big: i.photo1big,
+                    photo2small: i.photo2small,
                     price: i.price,
                     discount: i.discount
                 },

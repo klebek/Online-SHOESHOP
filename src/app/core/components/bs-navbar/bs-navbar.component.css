@@ -28,6 +28,10 @@
     color: white;
     font-weight: 500;
 }
+.navbar-collapse {
+    justify-content: flex-end;
+    flex-grow: 3;
+}
 .navbar-brand {
     font-family: "adineuePROKZ-Black";
     font-size: 32px;

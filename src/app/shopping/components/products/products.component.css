@@ -9,25 +9,6 @@
     outline: hidden;
     box-shadow: none;
 }
-.thumbnail {
-    font-family: "adineuePROKZ-Black";
-    position: relative;
-    margin-top: 20px;
-}
-.caption {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    width: 100%;
-    color: white;
-}
-.img-thumbnail {
-    padding: 0;
-}
-.small-text {
-    font-family: "adineuePROKZ-Bold";
-    font-size: 24px;
-}
 .btn-default {
     color: 161616;
     background: white;
@@ -36,6 +17,10 @@
 }
 .row-products {
     margin-top: 10px;
+}
+.row-banner-top {
+    margin-left: 0;
+    margin-right: 0;
 }
 .form-control:focus {
     border-color: #ccc;
@@ -48,21 +33,31 @@ option {
 .color {
     width: 42px;
 }
-.black {
-    background: black;
+.card {
+    border: none;
+    border-radius: 20px;
 }
-.white {
+.card-img {
+    vertical-align: middle;
+}
+.card-title {
+    text-align: center;
+}
+.card-img-overlay {
+    margin-top: 15px;
+}
+.card-text {
+    font-family: "adineuePROKZ-Black";
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 50px;
+}
+.btn-default {
+    font-family: "adineuePROKZ-Black";
+    color: 161616;
     background: white;
-}
-.beige {
-    background: brown;
-}
-.camo {
-    background: saddlebrown;
-}
-.green {
-    background: lightgreen;
-}
-.blue {
-    background: lightskyblue;
+    outline: 0;
+    margin-top: 15px;
 }

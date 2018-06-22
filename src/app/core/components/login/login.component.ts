@@ -1,7 +1,6 @@
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from 'shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +24,7 @@ export class LoginComponent {
     this.auth.loginEmailPassword(formLogin, formLogin.value.email, formLogin.value.password);
   }
 
-  private register(formRegister) {
+  register(formRegister) {
     this.auth.registerEmailPassword(formRegister, formRegister.value.email, formRegister.value.password);  
   }
 

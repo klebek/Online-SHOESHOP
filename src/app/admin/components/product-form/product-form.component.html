@@ -10,6 +10,21 @@
         </div>
       </div>
       <div class="form-group">
+        <label for="discount">Discount</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">%</span>
+          </div>
+          <input #discount="ngModel" [(ngModel)]="product.discount" name="discount" id="discount" type="number" class="form-control"
+            required [max]="100" [min]="0">
+        </div>
+        <div class="alert alert-danger" *ngIf="discount.touched && discount.invalid">
+          <div *ngIf="discount.errors.required">Discount is required</div>
+          <div *ngIf="discount.errors.max">Discount should be 100 or lower</div>
+          <div *ngIf="discount.errors.min">Discount should be higher than 0</div>
+        </div>
+      </div>
+      <div class="form-group">
         <label for="price">Price</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -36,28 +51,23 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="imageUrl">Image URL</label>
-        <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" value="" class="form-control"
+        <label for="photo1">Photo URL</label>
+        <input #photo1="ngModel" [(ngModel)]="product.photo1" name="photo1" id="photo1" type="text" value="" class="form-control"
           required url>
-        <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
-          <div *ngIf="imageUrl.errors.required">Image URL is required</div>
-          <div *ngIf="imageUrl.errors.url">Please enter valid URL</div>
+        <div class="alert alert-danger" *ngIf="photo1.touched && photo1.invalid">
+          <div *ngIf="photo1.errors.required">Image URL is required</div>
+          <div *ngIf="photo1.errors.url">Please enter valid URL</div>
         </div>
       </div>
       <div class="form-group">
-        <label for="discount">Discount</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">%</span>
+          <label for="photo2">Photo URL</label>
+          <input #photo2="ngModel" [(ngModel)]="product.photo2" name="photo2" id="photo2" type="text" value="" class="form-control"
+            required url>
+          <div class="alert alert-danger" *ngIf="photo2.touched && photo2.invalid">
+            <div *ngIf="photo2.errors.required">Image URL is required</div>
+            <div *ngIf="photo2.errors.url">Please enter valid URL</div>
           </div>
-          <input #discount="ngModel" [(ngModel)]="product.discount" name="discount" id="discount" type="number" class="form-control" required [max]="100" [min]="0">
         </div>
-        <div class="alert alert-danger" *ngIf="discount.touched && discount.invalid">
-            <div *ngIf="discount.errors.required">Discount is required</div>
-            <div *ngIf="discount.errors.max">Discount should be 100 or lower</div>
-            <div *ngIf="discount.errors.min">Discount should be higher than 0</div>
-          </div>
-      </div>
       <button [disabled]="!f.valid" class="btn btn-success">Save</button>
       <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
     </form>

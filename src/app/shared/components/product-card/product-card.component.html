@@ -1,8 +1,10 @@
 <div class="card">
   <a [routerLink]="['/product/', product.$key]">
-    <div *ngIf="product.imageUrl" [style.backgroundImage]="'url(' + product.imageUrl + ')'" class="card-img-top">
+    <!-- <img *ngIf="product.photo1 && showImage" [src]="product.photo1" class="card-img-zoom"> -->
+    <div *ngIf="product.photo1small && showImage" [style.backgroundImage]="'url(' + product.photo1small + ')'" class="card-img-top">
     </div>
   </a>
+  <ngx-gallery *ngIf="showGallery" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
   <div *ngIf="showActions && shoppingCart" class="card-footer">
     <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
       <i class="fa fa-cart-plus"></i>Add to Cart</button>

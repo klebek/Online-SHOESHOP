@@ -1,8 +1,9 @@
 .thumbnail-product { 
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 100%;
     background-size: cover;
+    background-position: center;
   }
   
 .card { 

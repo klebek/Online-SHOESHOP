@@ -11,7 +11,6 @@ export const environment = {
     projectId: 'online-shop-69b8c',
     storageBucket: 'online-shop-69b8c.appspot.com',
     messagingSenderId: '396726396725'
-
   }
 };
 

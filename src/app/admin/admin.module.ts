@@ -40,7 +40,7 @@ import { OrderFormComponent } from './components/order-form/order-form.component
         path: 'admin/orders',
         component: AdminOrdersComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
-      }
+      },
     ])
   ],
   declarations: [

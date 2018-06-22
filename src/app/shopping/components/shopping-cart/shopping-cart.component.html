@@ -3,7 +3,7 @@
     <h1>
       <i class="fa fa-shopping-cart"></i> Shopping Cart</h1>
       <div class="thumbnail text-center">
-          <img src="../../../../assets/images/carousel/carousel_3.jpg" alt="" class="img-responsive img-thumbnail">
+          <img src="/assets/images/carousel/carousel_3.jpg" alt="" class="img-responsive img-thumbnail">
           <div class="caption">
             <p class="small-text">
               EVERY TIME YOU BUY
@@ -37,7 +37,7 @@
         <tbody>
           <tr *ngFor="let item of cart.items">
             <td>
-              <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail-product"></div>
+              <div [style.backgroundImage]="'url(' + item.photo2small + ')'" class="thumbnail-product"></div>
             </td>
             <td>
               {{ item.title }}

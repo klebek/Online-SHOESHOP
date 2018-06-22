@@ -1,6 +1,5 @@
 .sticky-top {
     top: 100px;
-    margin: 20px 0 20px;
 }
 .form-control {
     margin: 5px 0 5px;
@@ -26,8 +25,11 @@
 }
 .img-thumbnail {
     padding: 0;
+    background-color: transparent;
+    border: none;
 }
 .btn-default {
+    font-family: "adineuePROKZ-Black";
     color: 161616;
     background: white;
     outline: 0;

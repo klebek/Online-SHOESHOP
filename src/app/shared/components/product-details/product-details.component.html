@@ -3,7 +3,7 @@
     <h1>
       <i class="fa fa-info-circle"></i> Product</h1>
     <div class="thumbnail text-center">
-      <img src="../../../../assets/images/carousel/carousel_4.jpg" alt="" class="img-responsive img-thumbnail">
+      <img src="/assets/images/carousel/carousel_4.jpg" alt="" class="img-responsive img-thumbnail">
       <div class="caption">
         <p class="small-text">
           CHECK OUR SALES
@@ -41,20 +41,25 @@
             </div>
           </div>
           <div class="col" *ngIf="cart$ | async as cart">
-            <product-card [product]="product" [show-details]="false" [shopping-cart]="cart"></product-card>
+            <product-card [product]="product" [show-details]="false" [show-gallery]="true" [show-image]="false" [shopping-cart]="cart"></product-card>
           </div>
         </div>
       </div>
       <div class="card-footer">
         <a routerLink="/">
-          <button class="btn btn-continue">Continue shopping</button>
+          <button class="btn btn-primary btn-left">Continue shopping</button>
         </a>
         <ng-container *ngIf="appUser">
           <a *ngIf="appUser.isAdmin" [routerLink]="['/admin/products/', product.$key]">
-            <button class="btn btn-primary">Edit product</button>
+            <button class="btn btn-primary btn-right">Edit product</button>
           </a>
         </ng-container>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <product-info [product]="product"></product-info>
   </div>
 </div>

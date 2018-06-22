@@ -4,7 +4,9 @@ export class ShoppingCartItem {
 
     $key: string;
     title: String;
-    imageUrl: String;
+    photo1small: String;
+    photo1big: String;
+    photo2small: String;
     price: number;
     quantity: number;
     discount: number;

@@ -1,3 +1,4 @@
+import { ProfileComponent } from './core/components/profile/profile.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -26,7 +27,8 @@ import { ShoppingModule } from './shopping/shopping.module';
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
       { path: 'login', component: LoginComponent },
-    ])
+      { path: 'profile/:id', component: ProfileComponent },
+    ], {useHash: true})
   ],
   bootstrap: [AppComponent]
 })
