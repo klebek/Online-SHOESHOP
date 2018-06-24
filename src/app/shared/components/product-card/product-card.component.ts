@@ -1,4 +1,3 @@
-import { GalleryService } from './../../services/gallery.service';
 import { Category } from './../../models/category';
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'shared/models/product';
@@ -24,19 +23,13 @@ export class ProductCardComponent implements OnInit {
 
   @Input('shopping-cart') shoppingCart: ShoppingCart;
 
-  galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
-
-  zoomedImg = "https://i.imgur.com/M6RIJsw.jpg";
-
   category$;
   products$;
 
   constructor(
     private cartService: ShoppingCartService,
     private categoryService: CategoryService,
-    private productService: ProductService,
-    private galleryService: GalleryService
+    private productService: ProductService
   ) {
   }
 
@@ -44,15 +37,8 @@ export class ProductCardComponent implements OnInit {
     this.cartService.addToCart(this.product);
   }
 
-  async loadGallery(product) {
-    this.galleryService.loadGallery(product);
-    this.galleryOptions = this.galleryService.getOptions();
-    this.galleryImages = this.galleryService.getImages();
-  }
-
   ngOnInit() {
     this.category$ = this.categoryService.getCategory(this.product.category);
     this.products$ = this.productService.getAll();
-    this.loadGallery(this.product);
   }
 }
