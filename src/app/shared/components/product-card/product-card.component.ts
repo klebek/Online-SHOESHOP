@@ -18,7 +18,6 @@ export class ProductCardComponent implements OnInit {
   @Input('show-image') showImage = true;
   @Input('show-actions') showActions = true;
   @Input('show-details') showDetails = true;
-  @Input('show-gallery') showGallery = false;
   @Input('category') category: Category;
 
   @Input('shopping-cart') shoppingCart: ShoppingCart;
