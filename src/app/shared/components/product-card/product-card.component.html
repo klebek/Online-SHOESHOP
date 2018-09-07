@@ -1,8 +1,9 @@
 <div class="card">
   <a [routerLink]="['/product/', product.$key]">
     <!-- <img *ngIf="product.photo1 && showImage" [src]="product.photo1" class="card-img-zoom"> -->
-    <div *ngIf="product.photo1small" [style.backgroundImage]="'url(' + product.photo1small + ')'" class="card-img-top">
+    <div *ngIf="product.photo1big && showImage" [style.backgroundImage]="'url(' + product.photo1big + ')'" class="card-img-top">
     </div>
+    <ngx-gallery *ngIf="showGallery" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
   </a>
   <div *ngIf="showActions && shoppingCart" class="card-footer">
     <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
@@ -19,7 +20,7 @@
         <a [routerLink]="['/product/', product.$key]">{{ product.title }}</a>
       </h5>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-price">
           <p class="card-text" *ngIf="product.discount === 0">{{ product.price | currency:'USD':'symbol'}}</p>
           <div *ngIf="product.discount > 0">
             <p>

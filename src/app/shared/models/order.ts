@@ -16,7 +16,8 @@ export class Order {
                     photo1big: i.photo1big,
                     photo2small: i.photo2small,
                     price: i.price,
-                    discount: i.discount
+                    discount: i.discount,
+                    sale: i.sale
                 },
                 quantity: i.quantity,
                 totalPrice: i.totalPrice

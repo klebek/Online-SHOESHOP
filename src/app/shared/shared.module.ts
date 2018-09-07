@@ -2,11 +2,11 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataTableModule } from 'angular5-data-table';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { CustomFormsModule } from 'ng2-validation';
 import { NgxGalleryModule } from 'ngx-gallery';
 
 import { ProductCardComponent } from './components/product-card/product-card.component';
@@ -40,10 +40,10 @@ import { UserService } from './services/user.service';
     ProductQuantityComponent,
     CommonModule,
     FormsModule,
-    CustomFormsModule,
     DataTableModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    NgxGalleryModule,
     NgbModule.forRoot().ngModule,
   ],
   providers: [

@@ -35,3 +35,11 @@
     outline: 0;
     margin-top: 15px;
 }
+.list-sale {
+    color: #dc3545;
+    background: #fcf3f4;
+}
+.list-sale:hover{
+    background-color: #dc3545;
+    color: white;
+}

@@ -64,7 +64,8 @@ export class ShoppingCartService {
         photo2small: product.photo2small,
         price: product.price,
         quantity: quantity,
-        discount: product.discount
+        discount: product.discount,
+        sale: product.sale
       });
     });
   }

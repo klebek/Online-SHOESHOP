@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { SharedModule } from 'shared/shared.module';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { environment } from './../environments/environment';
 import { AdminModule } from './admin/admin.module';
@@ -17,11 +20,14 @@ import { ShoppingModule } from './shopping/shopping.module';
     AppComponent
   ],
   imports: [
+    NgxGalleryModule,
     BrowserModule,
     SharedModule,
     AdminModule,
     ShoppingModule,
     CoreModule,
+    FormsModule,
+    CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },

@@ -17,10 +17,12 @@ import { SharedModule } from 'shared/shared.module';
 import { TitlePipe } from './components/products/pipes/title.pipe';
 import { ColorPipe } from './components/products/pipes/color.pipe';
 import { ProductDetailsComponent } from 'shared/components/product-details/product-details.component';
+import { SalePipe } from './components/products/pipes/sale.pipe';
 
 @NgModule({
   imports: [
     SharedModule,
+    FormsModule,
     RouterModule.forChild([
       { path: 'products', component: ProductsComponent },
       { path: 'product/:id', component: ProductDetailsComponent },
@@ -43,6 +45,7 @@ import { ProductDetailsComponent } from 'shared/components/product-details/produ
     OrderDetailsComponent,
     TitlePipe,
     ColorPipe,
+    SalePipe,
     ProductDetailsComponent
   ]
 })

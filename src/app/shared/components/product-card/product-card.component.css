@@ -1,9 +1,18 @@
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.col-price {
+  padding-left: 0;
+}
 .card { 
     margin-bottom: 30px;
+    border-color: #f2f2f2;
   }
   
-  .card-img-top { 
+  .card-img-top {
     height: 300px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #f6f6f6;
@@ -44,17 +53,13 @@
     color: #6c757d;
     top: 90%;
 }
+
 ngx-gallery /deep/ .ngx-gallery-image {
-  height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #f6f6f6;
-    /* background-size: auto !important; */
 }
-ngx-gallery /deep/ ngx-gallery-thumbnails {
-  height: 130px !important;
-  margin-top: 0px !important;
-}
+
 ngx-gallery /deep/ .ngx-gallery-preview-top {
   top: 85%;
 }

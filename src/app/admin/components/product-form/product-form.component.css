@@ -1,6 +1,26 @@
 .btn-danger {
     margin-left: 10px;
 }
-.row {
+/* .row {
     margin-top: 50px;
+} */
+.input-group-text-size {
+    width: 104px;
+    justify-content: center;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+.sale-radios {
+    background: #f8f8f8;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 0rem;
+}
+.sale-radios input {
+    margin-right: 10px;
+}
+.row-sale {
+    align-items: center;
 }

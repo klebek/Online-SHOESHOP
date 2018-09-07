@@ -6,6 +6,8 @@ import { ShoppingCart } from 'shared/models/shopping-cart';
 import { CategoryService } from 'shared/services/category.service';
 import { ProductService } from 'shared/services/product.service';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { GalleryService } from 'shared/services/gallery.service';
+import 'hammerjs';
 
 @Component({
   selector: 'product-card',
@@ -16,6 +18,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input('product') product: Product;
   @Input('show-image') showImage = true;
+  @Input('show-gallery') showGallery = false;
   @Input('show-actions') showActions = true;
   @Input('show-details') showDetails = true;
   @Input('category') category: Category;
@@ -25,11 +28,16 @@ export class ProductCardComponent implements OnInit {
   category$;
   products$;
 
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
+
   constructor(
     private cartService: ShoppingCartService,
     private categoryService: CategoryService,
+    private galleryService: GalleryService,
     private productService: ProductService
   ) {
+
   }
 
   addToCart() {
@@ -39,5 +47,9 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
     this.category$ = this.categoryService.getCategory(this.product.category);
     this.products$ = this.productService.getAll();
+    this.galleryService.getImages(this.product);
+    this.galleryService.getOptions();
+    this.galleryOptions = this.galleryService.galleryOptions;
+    this.galleryImages = this.galleryService.galleryImages;
   }
 }

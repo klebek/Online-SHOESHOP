@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { DataTableModule } from 'angular5-data-table';
 import { AuthGuard } from 'shared/services/auth-guard.service';
 import { SharedModule } from 'shared/shared.module';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
@@ -15,6 +16,7 @@ import { OrderFormComponent } from './components/order-form/order-form.component
 @NgModule({
   imports: [
     SharedModule,
+    CustomFormsModule,
     RouterModule.forChild([
       {
         path: 'admin/products/new',

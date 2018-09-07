@@ -19,7 +19,9 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
   colors;
   filteredProducts: Product[] = [];
+  saledProducts: Product[] = [];
   category: string;
+  discount: string;
   cart$: Observable<ShoppingCart>;
 
   constructor(

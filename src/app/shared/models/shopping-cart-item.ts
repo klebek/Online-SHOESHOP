@@ -10,6 +10,7 @@ export class ShoppingCartItem {
     price: number;
     quantity: number;
     discount: number;
+    sale: boolean;
 
     constructor(init?: Partial<ShoppingCartItem>) {
         Object.assign(this, init);

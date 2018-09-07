@@ -13,7 +13,10 @@ export class ProductFormComponent {
 
   categories$;
   category$;
-  product = {};
+  discountOn: boolean = false;
+  normalOn: boolean = false;
+  product = {
+  };
   id;
 
   constructor(
@@ -24,10 +27,13 @@ export class ProductFormComponent {
 
     this.categories$ = categoryService.getAll();
     this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id) this.productService.get(this.id).take(1).subscribe(p => this.product = p);
+    if (this.id) this.productService.get(this.id).take(1).subscribe(p => {
+      this.product = p
+    });
   }
 
   save(product){
+    // console.log(product);
     if (this.id) this.productService.update(this.id, product);
     else this.productService.create(product);
     this.router.navigate(['/admin/products']);
@@ -38,6 +44,15 @@ export class ProductFormComponent {
     
     this.productService.delete(this.id);
     this.router.navigate(['/admin/products']);
+  }
+
+  showDiscount(){
+    this.normalOn = false;
+    this.discountOn = true;
+  }
+  showNormal() {
+    this.discountOn = false;
+    this.normalOn = true;
   }
 
 }

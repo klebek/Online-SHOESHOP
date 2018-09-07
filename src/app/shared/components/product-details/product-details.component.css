@@ -1,3 +1,6 @@
+.card {
+  border: none;
+}
 .card-img-top { 
     background-size: cover;
     background-position: top;
@@ -72,4 +75,32 @@
     font-weight: bold;
     margin-left: 10px;
     color: #dc3545;
+  }
+  .col-left-details {
+    padding: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  /* .col-left-details {
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+  } */
+  .card-details {
+    border: none;
+  }
+  .card-details .card-body {
+    padding: 0;
+  }
+  .row-details {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .card-body .col-image {
+    height: 200px;
+    /* background-size: cover; */
+    background-position: 70% 70%;
+    object-fit: cover;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+  .card-header, .card-footer {
+    border: none;
   }

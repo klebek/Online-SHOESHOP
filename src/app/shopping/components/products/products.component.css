@@ -16,7 +16,10 @@
     margin-top: 15px;
 }
 .row-products {
-    margin-top: 10px;
+    margin-top: 20px;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
 }
 .row-banner-top {
     margin-left: 0;

@@ -1,19 +1,4 @@
 <div class="row">
-  <div class="col">
-    <h1>
-      <i class="fa fa-info-circle"></i> Product</h1>
-    <div class="thumbnail text-center">
-      <img src="/assets/images/carousel/carousel_4.jpg" alt="" class="img-responsive img-thumbnail">
-      <div class="caption">
-        <p class="small-text">
-          CHECK OUR SALES
-          <br /> IT ENDS SOON
-        </p>
-        <!-- <span class="text-danger">-50%</span><br /> -->
-        <button class="btn btn-default">CHECK</button>
-      </div>
-    </div>
-  </div>
   <div class="col-9">
     <div class="card text-center">
       <div class="card-header">
@@ -34,14 +19,26 @@
             <p class="card-text" *ngIf="product.discount === 0">Price: {{ product.price | currency:'USD':'symbol'}}</p>
             <div *ngIf="product.discount > 0">
               <p>
-                <span class="card-text">Price: </span><span class="card-text strike-out">{{ product.price | currency:'USD':'symbol'}}</span>
+                <span class="card-text">Price: </span>
+                <span class="card-text strike-out">{{ product.price | currency:'USD':'symbol'}}</span>
                 <span class="card-text badge badge-danger">{{ product.price * (1 - (product.discount / 100)) | currency:'USD':'symbol'}}</span>
                 <span class="red-text">You save {{ product.discount }}%</span>
               </p>
             </div>
+            <div class="card card-details">
+              <div class="card-body">
+                <div class="row row-details">
+                  <div class="col-6 col-left-details">
+                    This is some text within a card body leftfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffv
+                  </div>
+                  <div class="col-6 col-image" [style.backgroundImage]="'url(' + product.photo2big + ')'">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col" *ngIf="cart$ | async as cart">
-            <product-card [product]="product" [show-details]="false" [show-image]="false" [shopping-cart]="cart"></product-card>
+            <product-card [product]="product" [show-details]="false" [show-image]="false" [show-gallery]="true" [shopping-cart]="cart"></product-card>
           </div>
         </div>
       </div>
@@ -57,9 +54,24 @@
       </div>
     </div>
   </div>
+  <div class="col">
+    <h1>
+      <i class="fa fa-info"></i> Product</h1>
+    <div class="thumbnail text-center">
+      <img src="/assets/images/carousel/carousel_4.jpg" alt="" class="img-responsive img-thumbnail">
+      <div class="caption">
+        <p class="small-text">
+          CHECK OUR SALES
+          <br /> IT ENDS SOON
+        </p>
+        <!-- <span class="text-danger">-50%</span><br /> -->
+        <button class="btn btn-default">CHECK</button>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="row">
   <div class="col">
-    
+
   </div>
 </div>
