@@ -47,12 +47,10 @@ export class ProductFormComponent {
   }
 
   showDiscount(){
-    this.normalOn = false;
     this.discountOn = true;
   }
-  showNormal() {
+  closeDiscount() {
     this.discountOn = false;
-    this.normalOn = true;
   }
 
 }

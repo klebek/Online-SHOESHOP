@@ -39,15 +39,14 @@
           <div class="col-2">
             <div class="radio">
               <label>
-                <input #sale="ngModel" (click)="showNormal()" ngModel type="radio" name="sale" [value]=false required> No
-                sale
+                <input #sale="ngModel" (click)="closeDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=false required> No sale
               </label>
             </div>
           </div>
           <div class="col-2">
             <div class="radio">
               <label>
-                <input #sale="ngModel" (click)="showDiscount()" ngModel type="radio" name="sale" [value]=true required> Sale
+                <input #sale="ngModel" (click)="showDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=true required> Sale
               </label>
             </div>
           </div>
@@ -58,7 +57,7 @@
                   <span class="input-group-text">%</span>
                 </div>
                 <input #discount="ngModel" [(ngModel)]="product.discount" name="discount" placeholder="Type discount" type="number" class="form-control"
-                  required [max]="100" [min]="0">
+                  required [max]="100" [min]="1">
               </div>
               <div class="alert alert-danger" *ngIf="discount.touched && discount.invalid">
                 <div *ngIf="discount.errors.required">Discount is required</div>
