@@ -24,3 +24,22 @@
 .row-sale {
     align-items: center;
 }
+.col-photos {
+    flex-direction: row;
+}
+.col-img-second {
+    align-self: center;
+    margin-left: -50px;
+    margin-top: -150px;
+}
+.card-img-second {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+.col-first-photo {
+    z-index: 2;
+}
+.card {
+    border-color: #f8f8f8;
+}

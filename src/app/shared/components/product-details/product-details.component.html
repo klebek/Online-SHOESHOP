@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col-9">
+  <div class="col">
     <div class="card text-center">
       <div class="card-header">
         Details
       </div>
       <div class="card-body" *ngIf="product">
         <div class="row">
-          <div class="col-8">
+          <div class="col-7">
             <div class="row card-brand">
               <div class="col-2 card-category">
                 <img *ngIf="category" [src]="category.logo" class="category-logo">
@@ -37,7 +37,8 @@
               </div>
             </div>
           </div>
-          <div class="col" *ngIf="cart$ | async as cart">
+          <div class="col"></div>
+          <div class="col-4" *ngIf="cart$ | async as cart">
             <product-card [product]="product" [show-details]="false" [show-image]="false" [show-gallery]="true" [shopping-cart]="cart"></product-card>
           </div>
         </div>
@@ -54,7 +55,7 @@
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col-3">
     <h1>
       <i class="fa fa-info"></i> Product</h1>
     <div class="thumbnail text-center">

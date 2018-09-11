@@ -27,7 +27,7 @@ export class GalleryService {
   getOptions() {
     this.galleryOptions = [
       {
-        width: '324px',
+        width: '100%',
         height: '470px',
         thumbnails: false,
         imageSwipe: true,

@@ -18,6 +18,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input('product') product: Product;
   @Input('show-image') showImage = true;
+  @Input('show-preview') showPreview = false;
   @Input('show-gallery') showGallery = false;
   @Input('show-actions') showActions = true;
   @Input('show-details') showDetails = true;
@@ -27,6 +28,7 @@ export class ProductCardComponent implements OnInit {
 
   category$;
   products$;
+  bgProduct;
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
@@ -37,8 +39,8 @@ export class ProductCardComponent implements OnInit {
     private galleryService: GalleryService,
     private productService: ProductService
   ) {
-
   }
+
 
   addToCart() {
     this.cartService.addToCart(this.product);

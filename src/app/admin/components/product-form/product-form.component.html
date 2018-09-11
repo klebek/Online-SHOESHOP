@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-6">
+  <div class="col-1"></div>
+  <div class="col-6">
     <form #f="ngForm" (ngSubmit)="save(f.value)">
       <div class="form-group">
         <label for="category">Category</label>
@@ -39,14 +39,15 @@
           <div class="col-2">
             <div class="radio">
               <label>
-                <input #sale="ngModel" (click)="closeDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=false required> No sale
+                <input #sale="ngModel" (click)="closeDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=false required>                No
+                sale
               </label>
             </div>
           </div>
           <div class="col-2">
             <div class="radio">
               <label>
-                <input #sale="ngModel" (click)="showDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=true required> Sale
+                <input #sale="ngModel" (click)="showDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=true required>                Sale
               </label>
             </div>
           </div>
@@ -61,7 +62,7 @@
               </div>
               <div class="alert alert-danger" *ngIf="discount.touched && discount.invalid">
                 <div *ngIf="discount.errors.required">Discount is required</div>
-                <div *ngIf="discount.errors.max">Discount should be 100 or lower</div>
+                <div *ngIf="discount.errors.max">Discount should be between 1 and 100</div>
                 <div *ngIf="discount.errors.min">Discount should be higher than 0</div>
               </div>
             </div>
@@ -86,8 +87,9 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="photo1small">#1 Photo URL</label>
-        <div class="input-group">
+        <label for="photo1big">#1 Photo URL</label>
+        <!-- SMALLL IMAGE -->
+        <!-- <div class="input-group">
           <div class="input-group-prepend"><span class="input-group-text input-group-text-size" id="">Small size: </span></div>
           <input #photo1small="ngModel" [(ngModel)]="product.photo1small" name="photo1small" id="photo1small" type="text" value=""
             class="form-control" required url>
@@ -95,7 +97,7 @@
         <div class="alert alert-danger" *ngIf="photo1small.touched && photo1small.invalid">
           <div *ngIf="photo1small.errors.required">Image URL is required</div>
           <div *ngIf="photo1small.errors.url">Please enter valid URL</div>
-        </div>
+        </div> -->
         <div class="input-group">
           <div class="input-group-prepend"><span class="input-group-text input-group-text-size" id="">Full size: </span></div>
           <input #photo1big="ngModel" [(ngModel)]="product.photo1big" name="photo1big" id="photo1big" type="text" value="" class="form-control"
@@ -107,8 +109,9 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="photo2small">#2 Photo URL</label>
-        <div class="input-group">
+        <label for="photo2big">#2 Photo URL</label>
+        <!-- SMALL IMAGE -->
+        <!-- <div class="input-group">
           <div class="input-group-prepend"><span class="input-group-text input-group-text-size" id="">Small size: </span></div>
           <input #photo2small="ngModel" [(ngModel)]="product.photo2small" name="photo2small" id="photo2small" type="text" value=""
             class="form-control" required url>
@@ -116,7 +119,7 @@
         <div class="alert alert-danger" *ngIf="photo2small.touched && photo2small.invalid">
           <div *ngIf="photo2small.errors.required">Image URL is required</div>
           <div *ngIf="photo2small.errors.url">Please enter valid URL</div>
-        </div>
+        </div> -->
         <div class="input-group">
           <div class="input-group-prepend"><span class="input-group-text input-group-text-size" id="">Full size: </span></div>
           <input #photo2big="ngModel" [(ngModel)]="product.photo2big" name="photo2big" id="photo2big" type="text" class="form-control"
@@ -131,9 +134,14 @@
       <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
     </form>
   </div>
-  <div *ngIf="product.category" class="col-3">
+  <div *ngIf="product.category" class="col-3 col-first-photo">
     <ng-container *ngIf="categories$ | async as categories">
-      <product-card [product]="product" [show-actions]="false" [category]="categories"></product-card>
+      <product-card [product]="product" [show-image]="false" [show-preview]="true" [show-actions]="false" [category]="categories"></product-card>
     </ng-container>
+  </div>
+  <div class="col-2 col-img-second">
+    <div *ngIf="product.photo2big" class="card">
+      <div [style.backgroundImage]="'url(' + product.photo2big + ')'" class="card-img-top card-img-second"></div>
+    </div>
   </div>
 </div>
