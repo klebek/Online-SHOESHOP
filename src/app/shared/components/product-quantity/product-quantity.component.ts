@@ -12,6 +12,7 @@ export class ProductQuantityComponent {
 
   @Input('product') product: Product;
   @Input('shopping-cart') shoppingCart: ShoppingCart;
+  @Input('inCart') inCart = false;
   
   constructor(private cartService: ShoppingCartService) { }
 
