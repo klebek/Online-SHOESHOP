@@ -14,6 +14,8 @@ import 'rxjs/add/observable/of';
 export class AuthService {
 
   user$: Observable<firebase.User>;
+  errorLogin;
+  errorRegister;
 
   constructor(
     private userService: UserService,
@@ -34,18 +36,24 @@ export class AuthService {
     this.afAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
   }
 
-  loginEmailPassword(formLogin, email, password) {
+  async loginEmailPassword(formLogin, email, password) {
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
-    this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    await this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    .catch(error => {
+      this.errorLogin = error.message;
+    });
   }
 
-  registerEmailPassword(formRegister, email, password) {
+  async registerEmailPassword(formRegister, email, password) {
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
     let confirmPassword = formRegister.value.confirmPassword;
     let name = formRegister.value.name;
-    this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    .catch(error => {
+      this.errorRegister = error.message;
+    });
   }
 
   logout() {

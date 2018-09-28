@@ -80,7 +80,20 @@ h1, h2, h3 {
   background-color: $primary-color;
   border-color: $primary-color;
 }
-
+.alert {
+  border-radius: calc(0.25rem - 1px);
+  text-align: center;
+  color: #ececec;
+  border-color: #ececec;
+}
+.alert-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+input, select {
+  margin-bottom: 10px;
+}
 .form-control:focus {
   border-color: $primary-color;
 }

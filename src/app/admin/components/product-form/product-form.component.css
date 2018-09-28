@@ -49,17 +49,4 @@
 .card-sale {
     border: none;
 }
-input, select {
-    margin-bottom: 10px;
-}
-.alert {
-    border-radius: calc(0.25rem - 1px);
-    text-align: center;
-    color: #ececec;
-    border-color: #ececec;
-}
-.alert-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    color: white;
-}
+

@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent {
 
-  constructor(private auth: AuthService) {
-  }
+  errorLogin;
+  errorRegister;
+
+  constructor(private auth: AuthService) {}
 
   loginGoogle() {
     this.auth.loginGoogle();
@@ -20,12 +22,14 @@ export class LoginComponent {
     this.auth.loginFb();
   }
 
-  loginEmailPassword(formLogin) {
-    this.auth.loginEmailPassword(formLogin, formLogin.value.email, formLogin.value.password);
+  async loginEmailPassword(formLogin) {
+    await this.auth.loginEmailPassword(formLogin, formLogin.value.email, formLogin.value.password);
+    this.errorLogin = await this.auth.errorLogin;
   }
 
-  register(formRegister) {
-    this.auth.registerEmailPassword(formRegister, formRegister.value.email, formRegister.value.password);  
+  async register(formRegister) {
+    await this.auth.registerEmailPassword(formRegister, formRegister.value.email, formRegister.value.password);
+    this.errorRegister = await this.auth.errorRegister;  
   }
 
 }
