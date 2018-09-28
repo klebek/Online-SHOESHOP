@@ -7,7 +7,12 @@
 }
 .card { 
     margin-bottom: 30px;
+    background-color: #f6f6f6;
     border-color: #f2f2f2;
+    /* border: none; */
+  }
+  .card-body {
+    background-color: white;
   }
   .card-img-top {
     height: 400px;
@@ -29,9 +34,12 @@
     margin-right: 10px;
   }
   .category-logo {
-    height: 40px;
+    height: 35px;
     float: right;
     top: 0;
+  }
+  .col-category-logo {
+    padding-right: 0;
   }
   a {
     text-decoration: none;
@@ -40,10 +48,31 @@
   .strike-out {
     text-decoration: line-through;
   }
+  .card-header-nosale {
+    background-color: transparent;
+    color: rgb(219, 219, 219);
+    border-color: transparent;
+  }
+  .card-header-sale {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+  }
+  .card-header {
+    text-align: center;
+    padding: 10px;
+    /* -webkit-clip-path: polygon(0 0, 100% 1%, 100% 80%, 50% 100%, 0 80%);
+    clip-path: polygon(0 0, 100% 1%, 100% 80%, 50% 100%, 0 80%); */
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
   .badge-danger {
     margin-left: 10px;
     font-size: 1.2rem;
     font-weight: normal;
+    border-radius: calc(0.25rem - 1px);
   }
   .btn-secondary {
     border-radius: 0;

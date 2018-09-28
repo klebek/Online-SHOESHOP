@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="col">
-            <div *ngIf="discountOn" class="form-group">
+            <div *ngIf="product.sale" class="form-group">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">%</span>
@@ -64,20 +64,6 @@
                 <div *ngIf="discount.errors.required">Discount is required</div>
                 <div *ngIf="discount.errors.max">Discount should be between 1 and 100</div>
                 <div *ngIf="discount.errors.min">Discount should be higher than 0</div>
-              </div>
-            </div>
-            <div *ngIf="normalOn" class="form-group">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">%</span>
-                </div>
-                <input #discount="ngModel" [(ngModel)]="product.discount" name="discount" placeholder="Type 0" type="number" class="form-control"
-                  required [max]="0" [min]="0">
-              </div>
-              <div class="alert alert-danger" *ngIf="discount.touched && discount.invalid">
-                <div *ngIf="discount.errors.required">Discount is required</div>
-                <div *ngIf="discount.errors.min">Discount should be exactly 0</div>
-                <div *ngIf="discount.errors.max">Discount should be exactly 0</div>
               </div>
             </div>
           </div>
@@ -141,7 +127,10 @@
   </div>
   <div class="col-2 col-img-second">
     <div *ngIf="product.photo2big" class="card">
-      <div [style.backgroundImage]="'url(' + product.photo2big + ')'" class="card-img-top card-img-second"></div>
+      <div [style.backgroundImage]="'url(' + product.photo2big + ')'" class="card-img-top card-img-small"></div>
+    </div>
+    <div *ngIf="product.photo1big" class="card">
+      <div [style.backgroundImage]="'url(' + product.photo1big + ')'" class="card-img-top card-img-small card-img-small-second"></div>
     </div>
   </div>
 </div>

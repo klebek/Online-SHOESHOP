@@ -14,7 +14,6 @@ export class ProductFormComponent {
   categories$;
   category$;
   discountOn: boolean = false;
-  normalOn: boolean = false;
   product = {
   };
   id;
