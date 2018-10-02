@@ -16,4 +16,16 @@
   }
   .btn-round {
     border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .btn-round-right {
+    background-color: rgb(84, 194, 84);
+    border-color: rgb(84, 194, 84);
+  }
+  .btn-round-left {
+    background-color: #dc3545;
+    border-color: #dc3545;
   }

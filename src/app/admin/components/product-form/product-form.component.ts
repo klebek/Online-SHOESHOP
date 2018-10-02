@@ -32,7 +32,6 @@ export class ProductFormComponent {
   }
 
   save(product){
-    // console.log(product);
     if (this.id) this.productService.update(this.id, product);
     else this.productService.create(product);
     this.router.navigate(['/admin/products']);

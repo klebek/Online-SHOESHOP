@@ -40,9 +40,16 @@ export class AdminOrdersComponent implements OnDestroy {
       .then(items => this.items = items);
   }
 
-  filter(query: string) {
-    let filteredOrders = (query) ?
-      this.orders.filter(o => o.shopping.name.toLowerCase().includes(query.toLowerCase())) : 
+  filterByEmail(query1: string) {
+    let filteredOrders = (query1) ?
+      this.orders.filter(o => o.shopping.email.toLowerCase().includes(query1.toLowerCase())) : 
+      this.orders;
+      this.initializeTable(filteredOrders);
+  }
+
+  filterByOrder(query2: string) {
+    let filteredOrders = (query2) ?
+      this.orders.filter(o => o.orderId.toLowerCase().includes(query2.toLowerCase())) : 
       this.orders;
       this.initializeTable(filteredOrders);
   }
@@ -51,6 +58,13 @@ export class AdminOrdersComponent implements OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  orderRead(key) {
+    this.orderService.orderRead(key);
+  }
+
+  orderUnread(key) {
+    this.orderService.orderUnread(key);
+  }
 
 }
  

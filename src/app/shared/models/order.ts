@@ -1,13 +1,17 @@
-import { inject } from '@angular/core/testing';
 import { ShoppingCart } from "./shopping-cart";
 
 export class Order {
+    $key: string;
+    orderId: string;
     datePlaced: number;
     items: any[];
     total: number;
+    read: boolean;
 
     constructor(public userId: String, public shopping: any, shoppingCart: ShoppingCart) {
+        this.orderId = Math.random().toString().substring(2,9).toUpperCase();
         this.datePlaced = new Date().getTime();
+        this.read = false;
         this.items = shoppingCart.items.map(i => {
             return {
                 product: {

@@ -25,6 +25,18 @@ export class OrderService {
     return this.db.object('/orders/' + orderId);
   }
 
+  orderRead(orderId) {
+    this.db.object('/orders/' + orderId).update({
+      read: true
+    })
+  }
+
+  orderUnread(orderId) {
+    this.db.object('/orders/' + orderId).update({
+      read: false
+    })
+  }
+
   private async getOrderId(): Promise<string> {
     let orderId = localStorage.getItem('orderId');
     return orderId;

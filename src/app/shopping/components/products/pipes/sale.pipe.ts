@@ -9,7 +9,7 @@ export class SalePipe implements PipeTransform {
         if(searchSale == null) return sales;
 
         return sales.filter(function(p){
-          return p.sale > -1;
+          return p.sale.toString().indexOf(searchSale.toString()) > -1;
         })
       }
     }

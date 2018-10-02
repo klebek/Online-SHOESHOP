@@ -23,6 +23,8 @@ export class ProductsComponent implements OnInit {
   category: string;
   discount: string;
   cart$: Observable<ShoppingCart>;
+  radioAllChecked = true;
+  radioSaleChecked = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +36,15 @@ export class ProductsComponent implements OnInit {
     this.colors = this.colorService.getAll();
     this.cart$ = await this.cartService.getCart();
     this.populateProducts();
+  }
+
+  private hideSale(){
+    this.radioSaleChecked = false;
+    this.radioAllChecked = true;
+  }
+  private showSale() {
+    this.radioSaleChecked = true;
+    this.radioAllChecked = false;
   }
 
   private populateProducts() {
@@ -54,4 +65,5 @@ export class ProductsComponent implements OnInit {
       this.products.filter(p => p.category === this.category) :
       this.products;
   }
+  
 }
