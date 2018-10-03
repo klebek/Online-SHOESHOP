@@ -17,11 +17,11 @@ import { ColorService } from 'shared/services/color.service';
 export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
-  colors;
   filteredProducts: Product[] = [];
   saledProducts: Product[] = [];
   category: string;
   discount: string;
+  colors;
   cart$: Observable<ShoppingCart>;
   radioAllChecked = true;
   radioSaleChecked = false;

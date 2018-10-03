@@ -8,8 +8,7 @@
 .card { 
     margin-bottom: 30px;
     background-color: #f6f6f6;
-    border-color: #f2f2f2;
-    /* border: none; */
+    border: none;
   }
   .card-body {
     background-color: white;
@@ -24,6 +23,7 @@
   .card-footer {
     padding: 0;
     background: #fff;
+    border: none;
   }
   .card-footer button {
     cursor: pointer;

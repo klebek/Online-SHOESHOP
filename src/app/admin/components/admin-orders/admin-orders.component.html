@@ -3,23 +3,23 @@
         <div class="col-6"><input
             #query1
             (keyup)="filterByEmail(query1.value)"
-            (keydown.tab)="filterByEmail(query1.value)"
             type="text" class="form-control" placeholder="Search by email..."></div>
         <div class="col"><input
             #query2
             (keyup)="filterByOrder(query2.value)"
-            (keydown.tab)="filterByOrder(query2.value)"
             type="text" class="form-control" placeholder="Search by order number..."></div>
     </div>
   <data-table
       [items]="items"
+      [sortBy]="'date'"
+      [sortAsc]="false"
       [indexColumn]="false"
       [itemCount]="itemCount"
       [noDataMessage]="'You have not any orders'"
       [header]="false"
-      [sortBy]="'date'"
       (reload)="reloadItems($event)">
       <data-table-column
+          [width]="'12rem'"
           [property]="'orderId'"
           [header]="'Order number'"
           [resizable]="true">
@@ -28,6 +28,7 @@
           </ng-template>
       </data-table-column>
       <data-table-column
+          [width]="'15rem'"
           [property]="'userId'"
           [header]="'Customer'"
           [resizable]="true">
@@ -45,11 +46,10 @@
       </data-table-column>
       <data-table-column
           [property]="'date'"
-          [header]="'Date'"
-          [sortable]="true"
+          [header]="'date'"
           [resizable]="true">
           <ng-template #dataTableCell let-item="item">
-              <span [class.font-weight-bold]="!item.read">{{ item.datePlaced | date:'short' }}</span>
+              <span [class.font-weight-bold]="!item.read">{{ item.datePlaced }}</span>
           </ng-template>
       </data-table-column>
       <data-table-column

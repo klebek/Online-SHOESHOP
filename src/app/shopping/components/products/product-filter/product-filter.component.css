@@ -16,8 +16,19 @@
     width: 100%;
     color: white;
 }
+.category-logo {
+    height: 25px;
+    margin-right: 15px;
+}
+.active {
+    background-color: #f1f1f1;
+    color: black;
+}
 .text-danger {
     font-size: 56px;
+}
+.list-group-item {
+    border: none;
 }
 .small-text {
     font-family: "adineuePROKZ-Bold";
