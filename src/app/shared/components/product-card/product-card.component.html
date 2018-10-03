@@ -35,7 +35,7 @@
           </span>
         </div>
         <div *ngIf="category$ | async as category" class="col-sm col-category-logo">
-          <img *ngIf="category.logo" [src]="category.logo" class="category-logo">
+          <a (click)="onTop()" *ngIf="category.name" routerLink="/" [queryParams]="{ category: category.name.toLowerCase() }"><img *ngIf="category.logo" [src]="category.logo" class="category-logo"></a>
         </div>
       </div>
     </div>
