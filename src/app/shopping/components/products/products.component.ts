@@ -1,10 +1,9 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, Input } from '@angular/core';
 import { ProductService } from 'shared/services/product.service';
 import { Product } from 'shared/models/product';
 import { ShoppingCart } from 'shared/models/shopping-cart';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
-import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/switchMap";
 import { ColorService } from 'shared/services/color.service';
@@ -16,38 +15,23 @@ import { ColorService } from 'shared/services/color.service';
 })
 export class ProductsComponent implements OnInit {
 
+  searchText;
   products: Product[] = [];
   filteredProducts: Product[] = [];
-  saledProducts: Product[] = [];
   category: string;
-  discount: string;
-  colors;
   cart$: Observable<ShoppingCart>;
-  radioAllChecked = true;
-  radioSaleChecked = false;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: ShoppingCartService,
-    private colorService: ColorService) { }
+    private cartService: ShoppingCartService) { }
 
   async ngOnInit() {
-    this.colors = this.colorService.getAll();
     this.cart$ = await this.cartService.getCart();
     this.populateProducts();
   }
 
-  private hideSale(){
-    this.radioSaleChecked = false;
-    this.radioAllChecked = true;
-  }
-  private showSale() {
-    this.radioSaleChecked = true;
-    this.radioAllChecked = false;
-  }
-
-  private populateProducts() {
+  populateProducts() {
     this.productService
       .getAll()
       .switchMap(products => {
@@ -60,7 +44,7 @@ export class ProductsComponent implements OnInit {
       });
   }
 
-  private applyFilter() {
+  applyFilter() {
     this.filteredProducts = (this.category) ?
       this.products.filter(p => p.category === this.category) :
       this.products;

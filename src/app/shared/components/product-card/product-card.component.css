@@ -30,7 +30,7 @@
     font-weight: 500;
     /* text-transform: uppercase; */
   }
-  .fa-cart-plus {
+  .fa {
     margin-right: 10px;
   }
   .category-logo {
@@ -63,9 +63,8 @@
     padding: 10px;
     /* -webkit-clip-path: polygon(0 0, 100% 1%, 100% 80%, 50% 100%, 0 80%);
     clip-path: polygon(0 0, 100% 1%, 100% 80%, 50% 100%, 0 80%); */
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
     z-index: 2;
   }
   .badge-danger {

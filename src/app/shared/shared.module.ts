@@ -18,6 +18,7 @@ import { OrderService } from './services/order.service';
 import { ProductService } from './services/product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { UserService } from './services/user.service';
+import { MarketingComponent } from 'shared/components/marketing/marketing.component';
 
 @NgModule({
   imports: [

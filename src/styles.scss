@@ -103,3 +103,9 @@ input, select {
 .dropdown-item:hover {
   background-color: $white-color-hover;
 }
+.form-control::-moz-placeholder{
+  color:#999;
+}
+.form-control {
+  border-color: #ced4da;
+}

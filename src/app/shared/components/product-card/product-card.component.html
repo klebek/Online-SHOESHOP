@@ -6,7 +6,7 @@
     <ngx-gallery *ngIf="showGallery" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
   </a>
   <div *ngIf="product.sale" class="card-header card-header-sale">
-    sale
+      <i class="fa fa-bullhorn"></i>Sale
   </div>
   <div *ngIf="!product.sale" class="card-header card-header-nosale">
     shoeshop
@@ -35,7 +35,7 @@
           </span>
         </div>
         <div *ngIf="category$ | async as category" class="col-sm col-category-logo">
-          <a (click)="onTop()" *ngIf="category.name" routerLink="/" [queryParams]="{ category: category.name.toLowerCase() }"><img *ngIf="category.logo" [src]="category.logo" class="category-logo"></a>
+          <a (click)="onTop()" *ngIf="category.name" routerLink="/" [queryParams]="{ category: category.$key }"><img *ngIf="category.logo" [src]="category.logo" class="category-logo"></a>
         </div>
       </div>
     </div>

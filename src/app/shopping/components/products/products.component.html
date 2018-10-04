@@ -1,74 +1,20 @@
 <div class="row">
   <div class="col-3">
-      <product-filter [category]="category"></product-filter>
+    <product-filter [(searchText)]="searchText" [(searchColor)]="searchColor" [(searchSale)]="searchSale" [category]="category"></product-filter>
   </div>
-
   <div class="col">
-
-    <div class="row row-banner-top">
-      <div class="card bg-dark text-white">
-        <img class="card-img" src="/assets/images/carousel/carousel_2.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <div class="col-12">
-            <p class="card-text">
-              GIVE BACK YOUR OLD SNEAKERS AND GET THE NEW ONE
-              <br /><button class="btn btn-default">GET COUPON</button>
-            </p>
-          </div>
+    <marketing [bannerTwo]="true"></marketing>
+    <div class="row row-products" *ngIf="cart$ | async as cart">
+      <ng-container *ngFor="let p of filteredProducts | title : searchText | color : searchColor | sale : searchSale; let i = index">
+        <div *ngIf="p" class="col-4">
+          <product-card [product]="p" [category]="category" [shopping-cart]="cart"></product-card>
         </div>
-      </div>
+        <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
+      </ng-container>
     </div>
-
-    <div class="row inputs">
-      <div class="col-12">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Search by name</span>
-          </div>
-          <input [(ngModel)]="searchText" type="text" class="form-control">
-          <!-- <input [(ngModel)]="searchSale" type="text" class="form-control"> -->
-          <div class="input-group-prepend">
-            <span class="input-group-text">Search by color</span>
-          </div>
-          <select [(ngModel)]="searchColor" *ngIf="colors | async as colors" class="form-control">
-            <option></option>
-            <option *ngFor="let color of colors">
-              {{color.name}}
-            </option>
-          </select>
-
-          <!-- <input [(ngModel)]="searchSale" type="radio" name="sale" [value]="false">No sale
-          <input [(ngModel)]="searchSale" type="radio" name="sale" [value]="true">Sale
-          <input [(ngModel)]="searchSale" type="radio" name="sale" [value]="">All -->
-
-          <div class="btn-group radios">
-            <div (click)="hideSale()" class="radio-round-left" [class.radio-active-all]="radioAllChecked">
-              <label for="all">All
-                <input [(ngModel)]="searchSale" id="all" type="radio" name="sale" [value]="">
-              </label>
-            </div>
-            <div (click)="showSale()" class="radio-round-right" [class.radio-active-sale]="radioSaleChecked">
-              <label for="sale">Sale
-                <input [(ngModel)]="searchSale" id="sale" type="radio" name="sale" [value]="true">
-              </label>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="row row-products" *ngIf="cart$ | async as cart">
-        <ng-container *ngFor="let p of filteredProducts | title : searchText | color : searchColor | sale : searchSale; let i = index">
-          <div *ngIf="p" class="col-4">
-            <product-card [product]="p" [category]="category" [shopping-cart]="cart"></product-card>
-          </div>
-          <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
-        </ng-container>
-      </div>
-      <div class="row row-products">
-        <div class="col-4">
-          Ni chuj nie ma
-        </div>
+    <div class="row row-products">
+      <div class="col-4">
+        No more results
       </div>
     </div>
   </div>

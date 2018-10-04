@@ -18,6 +18,7 @@ import { TitlePipe } from './components/products/pipes/title.pipe';
 import { ColorPipe } from './components/products/pipes/color.pipe';
 import { ProductDetailsComponent } from 'shared/components/product-details/product-details.component';
 import { SalePipe } from './components/products/pipes/sale.pipe';
+import { MarketingComponent } from 'shared/components/marketing/marketing.component';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { SalePipe } from './components/products/pipes/sale.pipe';
     OrderSuccessComponent,
     MyOrdersComponent,
     ProductFilterComponent,
+    MarketingComponent,
     ShoppingCartSummaryComponent,
     ShoppingFormComponent,
     OrderDetailsComponent,
