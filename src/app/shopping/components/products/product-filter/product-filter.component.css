@@ -56,10 +56,10 @@ select.form-control:not([size]):not([multiple]) {
     height: auto;
 }
 .radios {
-    margin-left: 5px;
     background-color: #f8f8f8;
     border-radius: 5px;
     width: 100%;
+    cursor: pointer;
 }
 .radios label {
     padding: 5px 10px 5px 10px;

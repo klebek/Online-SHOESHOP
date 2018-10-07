@@ -58,6 +58,9 @@
     color: white;
     border-color: #dc3545;
   }
+  .col-price .card-text {
+    font-size: 18px;
+  }
   .card-header {
     text-align: center;
     padding: 10px;

@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderService } from 'shared/services/order.service';
 import { Subscription } from 'rxjs';
 import { DataTableResource } from 'angular5-data-table';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-admin-orders',
@@ -15,13 +16,16 @@ export class AdminOrdersComponent implements OnDestroy {
   subscription: Subscription;
   tableResource: DataTableResource<Order>;
   items: Order[] = [];
+  itemsArray: Order[];
+  sortedItems: Order[] = [];
   itemCount: number;
   
   constructor(private orderService: OrderService) {
     this.subscription = this.orderService.getOrders()
     .subscribe(orders => {
       this.orders = orders;
-      this.initializeTable(orders);
+      this.sortedItems =_.sortBy(this.orders,['read']);
+      this.initializeTable(this.sortedItems);
     });
   }
 
