@@ -10,9 +10,7 @@
             type="text" class="form-control" placeholder="Search by order number..."></div>
     </div>
   <data-table
-      [items]="sortedItems"
-      [sortBy]="'date'"
-      [sortAsc]="false"
+      [items]="items"
       [indexColumn]="false"
       [itemCount]="itemCount"
       [noDataMessage]="'You have not any orders'"
@@ -46,17 +44,17 @@
       </data-table-column>
       <data-table-column
           [property]="'date'"
-          [header]="'date'"
+          [header]="'Date'"
           [resizable]="true">
           <ng-template #dataTableCell let-item="item">
-              <span [class.font-weight-bold]="!item.read">{{ item.datePlaced }}</span>
+              <span [class.font-weight-bold]="!item.read">{{ item.datePlaced | date:'short'}}</span>
           </ng-template>
       </data-table-column>
       <data-table-column
           [property]="'$key'">
           <ng-template #dataTableCell let-item="item">
                   <span *ngIf="!item.read" class="badge badge-secondary">New</span>
-                  <a (click)="updateOrder(item.$key)" [routerLink]="['/admin/orders/', item.$key]"><button class="btn btn-sm btn-primary">Edit</button></a>
+                  <a (click)="orderRead(item.$key)" [routerLink]="['/admin/orders/', item.$key]"><button class="btn btn-sm btn-primary">Edit</button></a>
                   <a *ngIf="!item.read" (click)="orderRead(item.$key)"><button class="btn btn-sm btn-default">Mark as read</button></a>
                   <a *ngIf="item.read" (click)="orderUnread(item.$key)"><button class="btn btn-sm btn-default">Mark as unread</button></a>
           </ng-template>

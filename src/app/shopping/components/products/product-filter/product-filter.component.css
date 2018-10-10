@@ -17,9 +17,9 @@ input {
     margin-right: 15px;
 }
 .input-group-text {
-    background: white;
+    background: #ccc;
     border-right: none;
-    color: #999;
+    color: #132d4a;
 }
 .input-group .form-control {
     border-left-color: transparent;
@@ -87,4 +87,12 @@ select.form-control:not([size]):not([multiple]) {
     border-bottom-right-radius: 5px;
     width: 50%;
     text-align: center;
+}
+@media only screen and (max-width: 767px) {
+    .filtering {
+    padding: 10px;
+    }
+    .list-group-item {
+        padding: 1rem;
+    }
 }

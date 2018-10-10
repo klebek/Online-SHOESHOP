@@ -19,6 +19,7 @@ import { ProductService } from './services/product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { UserService } from './services/user.service';
 import { MarketingComponent } from 'shared/components/marketing/marketing.component';
+import { ProductFilterComponent } from 'app/shopping/components/products/product-filter/product-filter.component';
 
 @NgModule({
   imports: [

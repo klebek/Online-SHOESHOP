@@ -34,6 +34,9 @@ import { MarketingComponent } from 'shared/components/marketing/marketing.compon
       { path: 'my/orders/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] },
     ])
   ],
+  exports: [
+    ProductFilterComponent
+  ],
   declarations: [
     ProductsComponent,
     ShoppingCartComponent,

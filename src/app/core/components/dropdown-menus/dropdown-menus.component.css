@@ -1,0 +1,12 @@
+.dropdown-item-user {
+    background: #f0f0f0;
+}
+.cart-active {
+    background-color: #dc3545;
+    color: white;
+}
+@media only screen and (max-width: 767px) {
+    .dropdown-item {
+    padding: 1.5rem 1.5rem;
+    }
+}

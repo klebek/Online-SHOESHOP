@@ -3,10 +3,13 @@
     <a class="navbar-brand" routerLink="/">
       shoeshop
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+    <div ngbDropdown *ngIf="appUser; else anonymousUser" class="hamburger-menu">
+      <span class="hamburger-icon" id="dropdownBasic1" ngbDropdownToggle><i class="fa fa-bars"></i></span>
+      <div ngbDropdownMenu class="collapse navbar-collapse" aria-labelledby="dropdownBasic1">
+        <dropdown-menus *ngIf="cart$ | async as cart" [cart]="cart" [hamburger]="true" [appUser]="appUser"></dropdown-menus>
+      </div>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav">
@@ -32,17 +35,12 @@
           </li>
         </ng-template>
         <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <span class="hello">Hello, {{ appUser.email }}</span>
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
-            <ng-container *ngIf="appUser.isAdmin">
-              <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-              <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
-            </ng-container>
-            <div class="dropdown-divider"></div>
-            <a routerLink="/" class="dropdown-item" (click)="logout()">Log Out</a>
+            <dropdown-menus [appUser]="appUser"></dropdown-menus>
           </div>
         </li>
       </ul>

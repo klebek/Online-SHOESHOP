@@ -16,16 +16,14 @@ export class AdminOrdersComponent implements OnDestroy {
   subscription: Subscription;
   tableResource: DataTableResource<Order>;
   items: Order[] = [];
-  itemsArray: Order[];
-  sortedItems: Order[] = [];
   itemCount: number;
   
   constructor(private orderService: OrderService) {
     this.subscription = this.orderService.getOrders()
     .subscribe(orders => {
-      this.orders = orders;
-      this.sortedItems =_.sortBy(this.orders,['read']);
-      this.initializeTable(this.sortedItems);
+      this.orders = _.orderBy(orders,['read','datePlaced'], ['asc','desc']);
+      // this.sortedItems =_.sortBy(this.orders,['read']);
+      this.initializeTable(this.orders);
     });
   }
 
