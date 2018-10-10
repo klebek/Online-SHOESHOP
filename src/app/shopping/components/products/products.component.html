@@ -4,7 +4,7 @@
       <product-filter [(searchText)]="searchText" [(searchColor)]="searchColor" [(searchSale)]="searchSale" [category]="category"></product-filter>
     </div>
     <div class="col-sm col-products">
-      <marketing [bannerTwo]="true"></marketing>
+      <marketing [bannerTwo]="false"></marketing>
       <div class="row row-products" *ngIf="cart$ | async as cart">
         <ng-container *ngFor="let p of filteredProducts | title : searchText | color : searchColor | sale : searchSale; let i = index">
           <div *ngIf="p" class="col-sm-4">

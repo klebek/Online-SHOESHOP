@@ -27,7 +27,7 @@ $white-color-hover: #f2f2f2;
 }
 
 body { 
-  padding-top: 80px;
+  padding-top: 0;
   font-family: 'Rubik', sans-serif;
   background-image: url('assets/images/bg.jpg');
   background-repeat: repeat;
@@ -43,11 +43,6 @@ body {
 h1, h2, h3 { 
   margin-bottom: 1.5rem;
   font-family: "adineuePROKZ-Bold";
-}
-
-.navbar { 
-  background-color: $primary-color;
-  border-bottom: 3px solid #e7e7e7;
 }
 
 .navbar-light .navbar-brand {

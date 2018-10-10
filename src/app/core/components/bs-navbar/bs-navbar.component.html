@@ -1,10 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-light fixed-top">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Fluid jumbotron</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+<nav class="navbar navbar-expand-md navbar-light fixed-top" [class.navbarTrans]="!navbarTrans" [class.navbarColor]="navbarColor"> 
   <div class="container">
     <a class="navbar-brand" routerLink="/">
       shoeshop
     </a>
 
-    <div ngbDropdown *ngIf="appUser; else anonymousUser" class="hamburger-menu">
+    <div ngbDropdown *ngIf="appUser" class="hamburger-menu">
       <span class="hamburger-icon" id="dropdownBasic1" ngbDropdownToggle><i class="fa fa-bars"></i></span>
       <div ngbDropdownMenu class="collapse navbar-collapse" aria-labelledby="dropdownBasic1">
         <dropdown-menus *ngIf="cart$ | async as cart" [cart]="cart" [hamburger]="true" [appUser]="appUser"></dropdown-menus>
