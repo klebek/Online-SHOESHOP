@@ -29,3 +29,8 @@
     background-color: #dc3545;
     border-color: #dc3545;
   }
+  .btn-secondary-new {
+    background: white;
+    color: #132d4a;
+    border-color: transparent;
+  }

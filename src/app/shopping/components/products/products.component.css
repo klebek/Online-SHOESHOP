@@ -33,15 +33,4 @@
     outline: 0;
     margin-top: 15px;
 }
-@media only screen and (max-width: 767px) {
-    .row {
-        flex-direction: column;
-    }
-    .row-products {
-        flex-direction: column;
-    }
-    .col-sm-4 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
+

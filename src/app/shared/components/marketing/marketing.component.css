@@ -1,4 +1,4 @@
-.row-banner-top {
+.row-banner-2 {
     margin-left: 0;
     margin-right: 0;
 }
@@ -46,9 +46,4 @@
 }
 .text-danger {
     font-size: 56px;
-}
-@media only screen and (max-width: 767px) {
-    .row {
-    display: none;
-    }
 }

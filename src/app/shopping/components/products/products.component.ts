@@ -6,7 +6,7 @@ import { ShoppingCart } from 'shared/models/shopping-cart';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/switchMap";
-import { ColorService } from 'shared/services/color.service';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-products',
@@ -48,6 +48,7 @@ export class ProductsComponent implements OnInit {
     this.filteredProducts = (this.category) ?
       this.products.filter(p => p.category === this.category) :
       this.products;
+      this.filteredProducts = _.orderBy(this.filteredProducts,['thenew'], ['desc']);
   }
   
 }

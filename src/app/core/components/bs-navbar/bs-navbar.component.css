@@ -1,6 +1,10 @@
 .navbarColor {
     background: #132d4a;
 }
+.btn-default {
+    font-family: "adineuePROKZ-Black";
+    margin-top: 1.5rem;
+}
 .navbarTrans {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
     transition: height 2s;
@@ -13,8 +17,8 @@
     background-size: cover;
     background-position: 20% 20%;
     height: 500px;
-    padding-top: 12rem;
     color: white;
+    text-align: center;
 }
 .col-logo, .col-cart, .col-navbar-right {
     display: flex;
@@ -85,28 +89,3 @@ li {
 }
 /* MOBILE CSS */
 /* MEDIA */
-@media only screen and (min-width: 767px) {
-    .hamburger-menu {
-        display: none;
-    }
-    .hello-mobile {
-        display: none;
-    }
-}
-@media only screen and (max-width: 767px) {
-    .hello-desktop {
-        display: none;
-    }
-    .hamburger-icon {
-        font-size: 24px;
-        color: white;
-        padding: 0;
-        margin: 0;
-    }
-    .collapse {
-        min-width: 15rem;
-    }
-    .dropdown-toggle::after {
-        display: none;
-    }
-}

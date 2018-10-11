@@ -31,7 +31,14 @@ export class ProductFilterComponent implements OnInit {
     this.searchSaleChange.emit(newSearchSaleChange);
   }
   @Input('category') category;
+  @Input('product') product;
   @Input('hamburger') hamburger = false;
+
+  // @Input('product-name') productName = true;
+  // @Input('sale-radios') saleRadios = true;
+  // @Input('category-list') categoryList = true;
+  // @Input('color-list') colorList = true;
+  // @Input('marketing') marketing = true;
 
   categories$;
   products$;
