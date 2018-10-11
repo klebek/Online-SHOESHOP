@@ -3,6 +3,7 @@
 }
 .navbarTrans {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+    transition: height 2s;
 }
 .dropdown-toggle, .dropdown-item {
     cursor: pointer;
@@ -88,8 +89,14 @@ li {
     .hamburger-menu {
         display: none;
     }
+    .hello-mobile {
+        display: none;
+    }
 }
 @media only screen and (max-width: 767px) {
+    .hello-desktop {
+        display: none;
+    }
     .hamburger-icon {
         font-size: 24px;
         color: white;
