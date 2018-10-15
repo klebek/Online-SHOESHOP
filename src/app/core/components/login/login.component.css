@@ -1,0 +1,86 @@
+.col, .col-4, .col-6 {
+    margin-left: 0px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.col-right {
+    margin-left: 60px;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.fa {
+    padding-right: 10px;
+}
+.btn {
+    color:white;
+}
+.btn-primary {
+    margin-top: 20px;
+}
+.btn-block {
+}
+.btn-google {
+    background-color: #de4b39;
+    margin-top: 15px;
+}
+.btn-google:hover {
+    background-color: #cf4635;
+}
+.btn-facebook {
+    background-color: #4267b2;
+    margin-top: 15px;
+    float: right;
+}
+.btn-facebook:hover {
+    background-color: #3d60a6;
+}
+.bg-dark {
+    background: transparent !important;
+}
+.card {
+    border: none;
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+.card-img {
+    vertical-align: middle;
+}
+.card-title {
+    text-align: center;
+}
+.card-text {
+    font-family: "adineuePROKZ-Black";
+    font-size: 3.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+.card-text-intro {
+    font-family: "adineuePROKZ-Black";
+    font-size: 1.5rem;
+    color: white;
+    text-transform: lowercase;
+    text-align: center;
+}
+.col .form-group {
+    width: 50%;
+}
+.inline {
+    display: flex;
+    flex-direction: row;
+}
+.right-input {
+    margin-left: 5%;
+}
+.form-sign-in {
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 5px;
+}
+.form-sign-up {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5px;
+}
