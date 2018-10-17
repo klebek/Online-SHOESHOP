@@ -16,6 +16,9 @@ import * as _ from "lodash";
 export class ProductsComponent implements OnInit {
 
   searchText;
+  searchColor;
+  searchSale;
+  product: Product;
   products: Product[] = [];
   filteredProducts: Product[] = [];
   category: string;
