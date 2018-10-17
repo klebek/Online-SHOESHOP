@@ -59,11 +59,11 @@ export class ProductFilterComponent implements OnInit {
     this.colors = this.colorService.getAll();
   }
 
-  private hideSale() {
+  public hideSale() {
     this.radioSaleChecked = false;
     this.radioAllChecked = true;
   }
-  private showSale() {
+  public showSale() {
     this.radioSaleChecked = true;
     this.radioAllChecked = false;
   }

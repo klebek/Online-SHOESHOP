@@ -3,6 +3,7 @@ import { CategoryService } from 'shared/services/category.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/take';
+import { Product } from 'shared/models/product';
 
 @Component({
   selector: 'app-product-form',
@@ -14,8 +15,7 @@ export class ProductFormComponent {
   categories$;
   category$;
   discountOn: boolean = false;
-  product = {
-  };
+  product: Product;
   id;
 
   constructor(

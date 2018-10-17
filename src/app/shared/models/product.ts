@@ -11,4 +11,5 @@ export interface Product {
     details: string;
     discount: number;
     sale: boolean;
+    thenew: boolean;
 }
