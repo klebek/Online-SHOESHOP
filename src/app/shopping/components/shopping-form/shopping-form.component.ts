@@ -19,7 +19,7 @@ export class ShoppingFormComponent implements OnInit, OnDestroy {
   userSubscription: Subscription;
   userId: string;
   user;
-  shopping = <any>{};
+  shopping = Array<any>();
 
   constructor(
     private router: Router,
