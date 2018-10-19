@@ -13,7 +13,7 @@ export class ProductFormComponent {
 
   categories$;
   discountOn: boolean = false;
-  product: any = {};
+  product;
   
   id;
 
