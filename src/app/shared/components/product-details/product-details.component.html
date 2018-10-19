@@ -8,11 +8,11 @@
         <div class="row">
           <div class="col-md-7">
             <div class="row card-brand">
-              <div class="col-xs-2">
+              <div class="col-2">
                 <img *ngIf="category" [src]="category.logo" class="category-logo">
               </div>
-              <div class="col-xs-8 card-title">
-                {{ product.title }}
+              <div class="col-8 card-title">
+                <h5>{{ product.title }}</h5>
               </div>
             </div>
             <p class="product-details">{{ product.details }}</p>
