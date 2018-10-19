@@ -69,8 +69,8 @@ export class ProductFilterComponent implements OnInit {
   }
 
   onTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 420; // For Safari
+    document.documentElement.scrollTop = 420; // For Chrome, Firefox, IE and Opera
   }
 
 }

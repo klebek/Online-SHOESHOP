@@ -23,7 +23,7 @@ export class AppComponent {
     });
   }
   onTop(){
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 200; // For Safari
+    document.documentElement.scrollTop = 200; // For Chrome, Firefox, IE and Opera
   }
 }
