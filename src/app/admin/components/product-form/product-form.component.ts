@@ -13,9 +13,8 @@ import { Product } from 'shared/models/product';
 export class ProductFormComponent {
 
   categories$;
-  category$;
   discountOn: boolean = false;
-  product: Product;
+  product = {};
   id;
 
   constructor(

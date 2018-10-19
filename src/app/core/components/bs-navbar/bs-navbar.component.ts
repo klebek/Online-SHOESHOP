@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 import { AppUser } from 'shared/models/app-user';
 import { AuthService } from 'shared/services/auth.service';
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Input } from '@angular/core';
 import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -18,6 +18,8 @@ export class BsNavbarComponent implements OnInit {
   cart$: Observable<ShoppingCart>;
   navbarColor = false;
   scrollNum;
+  windowNum;
+  collapsed;
 
   constructor(
     private auth: AuthService,
@@ -35,14 +37,22 @@ export class BsNavbarComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
     checkScroll() {
       this.scrollNum = window.pageYOffset
+      this.windowNum = window.screen.width;
 
-      if (this.scrollNum >= 450) {
-        this.navbarColor = true
-      } else {
-        this.navbarColor = false
+      if(this.windowNum > 370 && this.windowNum < 767) {
+        if (this.scrollNum >= 20) {
+          this.navbarColor = true
+        } else {
+          this.navbarColor = false
+        }
       }
-      
-
+      else {
+        if (this.scrollNum >= 450) {
+          this.navbarColor = true
+        } else {
+          this.navbarColor = false
+        }
+      }
 }
          
 }

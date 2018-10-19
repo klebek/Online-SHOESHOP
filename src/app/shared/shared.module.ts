@@ -35,7 +35,8 @@ import { ProductFilterComponent } from 'app/shopping/components/products/product
   ],
   declarations: [
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    MarketingComponent,
   ],
   exports: [
     ProductCardComponent,
@@ -43,6 +44,7 @@ import { ProductFilterComponent } from 'app/shopping/components/products/product
     CommonModule,
     FormsModule,
     DataTableModule,
+    MarketingComponent,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgxGalleryModule,

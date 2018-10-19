@@ -3,7 +3,6 @@
 }
 .btn-default {
     font-family: "adineuePROKZ-Black";
-    margin-top: 1.5rem;
 }
 .navbarTrans {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
@@ -19,6 +18,7 @@
     height: 500px;
     color: white;
     text-align: center;
+    padding-bottom: 1rem;
 }
 .col-logo, .col-cart, .col-navbar-right {
     display: flex;
@@ -87,5 +87,10 @@ li {
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
-/* MOBILE CSS */
-/* MEDIA */
+.navbar-collapse-mobile {
+    color: black;
+    margin-top: 74px;
+}
+.hamburger-menu {
+    cursor: pointer;
+}

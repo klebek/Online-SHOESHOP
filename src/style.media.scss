@@ -8,14 +8,23 @@
     .jumbotron {
         padding-top: 12rem;
     }
+    .form-sign-up {
+        padding: 20px;
+    }
+    .btn-go-top {
+        display: none;
+    }
 }
 @media only screen and (max-width: 767px) {
     .container {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .form-sign-up {
+        padding: 0;
     }
     .jumbotron {
-        padding-top: 8rem;
+        padding-top: 5.5rem;
     }
     .btn-go-top {
         background-color: rgba(19,45,74,1);
@@ -57,13 +66,26 @@
     .list-group-item {
         padding: 1rem;
     }
+    nav .row {
+        flex-direction: column;
+    }
+    .col {
+        flex-direction: column;
+    }
+    .col-sm-7 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
     .row-main {
         flex-direction: column;
+    }
+    .row-forms h1 {
+        text-align: center;
     }
     .row-products {
         flex-direction: column;
     }
-    .col-sm-4 {
+    .col-sm-4, .col-sm-6, .col-sm-12 {
         padding-left: 0;
         padding-right: 0;
     }

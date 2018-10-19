@@ -9,5 +9,6 @@ export class MarketingComponent {
 
   @Input('bannerOne') bannerOne = false;
   @Input('bannerTwo') bannerTwo = false;
+  @Input('bannerThree') bannerThree = false;
 
 }
