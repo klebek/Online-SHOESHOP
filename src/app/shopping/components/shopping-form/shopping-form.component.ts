@@ -7,6 +7,7 @@ import { OrderService } from 'shared/services/order.service';
 import { Order } from 'shared/models/order';
 import { UserService } from 'shared/services/user.service';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { ShoppingOrder } from 'shared/models/shopping-order';
 
 @Component({
   selector: 'shopping-form',
@@ -19,7 +20,7 @@ export class ShoppingFormComponent implements OnInit, OnDestroy {
   userSubscription: Subscription;
   userId: string;
   user;
-  shopping;
+  shopping: ShoppingOrder = <ShoppingOrder>{};
 
   constructor(
     private router: Router,
