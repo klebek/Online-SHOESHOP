@@ -14,7 +14,7 @@ export class ProductFormComponent {
 
   categories$;
   discountOn: boolean = false;
-  product = {};
+  product = <any>{};
   id;
 
   constructor(
