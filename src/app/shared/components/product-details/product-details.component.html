@@ -11,9 +11,11 @@
               <div class="col-xs-2 card-category">
                 <img *ngIf="category" [src]="category.logo" class="category-logo">
               </div>
-              <div class="col-xs card-title">
+              <div class="col-xs-8 card-title">
+                  <img *ngIf="category" [src]="category.logo" class="category-logo">
                 <h5>{{ product.title }}</h5>
               </div>
+              <div class="col-xs-2"></div>
             </div>
             <p class="product-details">{{ product.details }}</p>
             <p class="card-text" *ngIf="product.discount === 0">Price: {{ product.price | currency:'USD':'symbol'}}</p>
