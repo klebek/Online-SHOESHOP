@@ -1,6 +1,10 @@
 .navbarColor {
     background: #132d4a;
 }
+.container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .btn-default {
     font-family: "adineuePROKZ-Black";
 }

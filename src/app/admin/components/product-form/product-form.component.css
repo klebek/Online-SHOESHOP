@@ -49,4 +49,16 @@
 .card-sale {
     border: none;
 }
+.btn-light {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.btn-light:not(:disabled):not(.disabled).active {
+    background-color: #132d4a;
+    border-color: #132d4a;
+    color: white;
+}
+.row-sale .input-group, .row-sale .form-group {
+    margin-bottom: 0;
+}
 

@@ -15,6 +15,8 @@ import { CoreModule } from './core/core.module';
 import { ProductsComponent } from './shopping/components/products/products.component';
 import { ShoppingModule } from './shopping/shopping.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +27,7 @@ import { ShoppingModule } from './shopping/shopping.module';
     SharedModule,
     AdminModule,
     ShoppingModule,
-    CoreModule,
+    CoreModule, 
     FormsModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),

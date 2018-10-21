@@ -4,7 +4,8 @@
     <form #f="ngForm" (ngSubmit)="save(f.value)">
       <div class="form-group">
         <label for="category">Category</label>
-        <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control" required>
+        <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control"
+          required>
           <option value=""></option>
           <option *ngFor="let c of categories$ | async" [value]="c.$key">
             {{ c.name }}
@@ -16,7 +17,8 @@
       </div>
       <div class="form-group">
         <label for="title">Title</label>
-        <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" required>
+        <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control"
+          required>
         <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
           Title is required
         </div>
@@ -27,7 +29,8 @@
           <div class="input-group-prepend">
             <span class="input-group-text">$</span>
           </div>
-          <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control" required [min]="0">
+          <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control"
+            required [min]="0">
         </div>
         <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
           <div *ngIf="price.errors.required">Price is required</div>
@@ -36,35 +39,41 @@
       </div>
       <div class="form-group sale-radios">
         <div class="row row-sale">
-          <div class="col-2">
-            <div class="radio">
-              <label>
-                <input #sale="ngModel" (click)="closeDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=false required>                No
-                sale
+          <div class="col-sm-4">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
+              <label ngbButtonLabel class="btn-light">
+                <input ngbButton #sale="ngModel" (click)="closeDiscount()" name="type" [(ngModel)]="product.sale" type="radio"
+                  [value]="false"> No sale
+              </label>
+              <label ngbButtonLabel class="btn-light">
+                <input ngbButton #sale="ngModel" (click)="showDiscount()" name="type" [(ngModel)]="product.sale" type="radio"
+                  [value]="true">
+                Sale
               </label>
             </div>
           </div>
-          <div class="col-2">
-            <div class="radio">
-              <label>
-                <input #sale="ngModel" (click)="showDiscount()" [(ngModel)]="product.sale" type="radio" name="sale" [value]=true required>                Sale
-              </label>
-            </div>
-          </div>
-          <div class="col">
+          <div class="col-sm">
             <div *ngIf="product.sale" class="form-group">
-              <div class="input-group mb-3">
+              <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">%</span>
                 </div>
-                <input #discount="ngModel" [(ngModel)]="product.discount" name="discount" placeholder="Type discount" type="number" class="form-control"
-                  required [max]="100" [min]="1">
+                <input #discount="ngModel" [(ngModel)]="product.discount" name="discount" placeholder="Type discount"
+                  type="number" class="form-control" required [max]="100" [min]="1">
               </div>
               <div class="alert alert-danger" *ngIf="discount.touched && discount.invalid">
                 <div *ngIf="discount.errors.required">Discount is required</div>
                 <div *ngIf="discount.errors.max">Discount should be between 1 and 100</div>
                 <div *ngIf="discount.errors.min">Discount should be higher than 0</div>
               </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="btn-group btn-group-toggle">
+              <label class="btn-light" ngbButtonLabel>
+                <input ngbButton #thenew="ngModel" name="new" [(ngModel)]="product.thenew" type="checkbox" ngbButton>
+                NEW
+              </label>
             </div>
           </div>
         </div>
@@ -86,8 +95,8 @@
         </div> -->
         <div class="input-group">
           <div class="input-group-prepend"><span class="input-group-text input-group-text-size" id="">Full size: </span></div>
-          <input #photo1big="ngModel" [(ngModel)]="product.photo1big" name="photo1big" id="photo1big" type="text" value="" class="form-control"
-            required url>
+          <input #photo1big="ngModel" [(ngModel)]="product.photo1big" name="photo1big" id="photo1big" type="text" value=""
+            class="form-control" required url>
         </div>
         <div class="alert alert-danger" *ngIf="photo1big.touched && photo1big.invalid">
           <div *ngIf="photo1big.errors.required">Image URL is required</div>

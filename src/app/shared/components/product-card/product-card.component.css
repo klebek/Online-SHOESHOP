@@ -13,19 +13,9 @@
   /* CARD NEW */
   .card-new {
     background-image: url('../../../../assets/images/bg_new.jpg');
-    /* border: 2px solid #132d4a; */
   }
-  .card-body-new, .card-footer-new, .card-header-nosale-new, .card-img-top-new, .card-title-new a{
-    background-color: transparent !important;
+  .card-header-nosale-new {
     color: white !important;
-  }
-  .btn-secondary-new {
-    background: white;
-    color: #132d4a;
-    border-color: transparent;
-  }
-  .category-logo-new {
-    filter: invert(100%);
   }
   /* END CARD NEW */
   .card-body {
@@ -47,10 +37,6 @@
     cursor: pointer;
     font-weight: 500;
     /* text-transform: uppercase; */
-  }
-  .fa {
-    margin-right: 10px;
-    margin-left: 10px;
   }
   .category-logo {
     height: 35px;

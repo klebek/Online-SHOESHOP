@@ -5,7 +5,7 @@
     </a>
 
     <div ngbDropdown *ngIf="appUser; else anonymousUserMobile" class="hamburger-menu">
-      <span class="hamburger-icon" id="dropdownBasic1" ngbDropdownToggle><i class="fa fa-bars"></i></span>
+      <span class="hamburger-icon" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-bars"></i></span>
       <div ngbDropdownMenu class="collapse navbar-collapse" aria-labelledby="dropdownBasic1">
         <dropdown-menus *ngIf="cart$ | async as cart" [cart]="cart" [hamburger]="true" [appUser]="appUser"></dropdown-menus>
       </div>
@@ -17,7 +17,7 @@
           <a class="nav-link" routerLink="/shopping-cart">
             <div class="row">
               <div class="col-3">
-                <i class="fa fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart"></i>
               </div>
               <div class="col" *ngIf="cart$ | async as cart">
                 <span class="badge badge-pill-active">
