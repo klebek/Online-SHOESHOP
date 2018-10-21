@@ -42,11 +42,11 @@
           <div class="col-sm-4">
             <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
               <label ngbButtonLabel class="btn-light">
-                <input ngbButton #sale="ngModel" (click)="closeDiscount()" name="type" [(ngModel)]="product.sale" type="radio"
+                <input ngbButton #sale="ngModel" (click)="closeDiscount()" name="sale" [(ngModel)]="product.sale" type="radio"
                   [value]="false"> No sale
               </label>
               <label ngbButtonLabel class="btn-light">
-                <input ngbButton #sale="ngModel" (click)="showDiscount()" name="type" [(ngModel)]="product.sale" type="radio"
+                <input ngbButton #sale="ngModel" (click)="showDiscount()" name="sale" [(ngModel)]="product.sale" type="radio"
                   [value]="true">
                 Sale
               </label>
@@ -71,7 +71,7 @@
           <div class="col-sm-2">
             <div class="btn-group btn-group-toggle">
               <label class="btn-light" ngbButtonLabel>
-                <input ngbButton #thenew="ngModel" name="new" [(ngModel)]="product.thenew" type="checkbox" ngbButton>
+                <input ngbButton #thenew="ngModel" name="thenew" [(ngModel)]="product.thenew" type="checkbox" ngbButton>
                 NEW
               </label>
             </div>
