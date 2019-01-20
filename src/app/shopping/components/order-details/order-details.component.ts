@@ -8,12 +8,13 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'order-details',
   templateUrl: './order-details.component.html',
-  styleUrls: ['./order-details.component.css']
+  styleUrls: ['./order-details.component.scss']
 })
 export class OrderDetailsComponent implements OnInit, OnDestroy {
 
   id;
-  orders;
+  order = [];
+  items = [];
   subscription: Subscription;
 
   constructor(private route: ActivatedRoute, private orderService: OrderService) {
@@ -22,8 +23,11 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
 
 
   async ngOnInit() {
-    this.subscription = this.orderService.getOrder(this.id).subscribe(orders => {
-      this.orders = orders;
+    this.subscription = await this.orderService.getOrder(this.id).subscribe(order => {
+      this.order = order;
+    });
+    this.subscription = await this.orderService.getOrderItems(this.id).subscribe(items => {
+      this.items = items;
     });
   }
 

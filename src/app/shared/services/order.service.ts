@@ -25,6 +25,10 @@ export class OrderService {
     return this.db.object('/orders/' + orderId);
   }
 
+  getOrderItems(orderId) {
+    return this.db.object('/orders/' + orderId + '/items');
+  }
+
   orderRead(orderId) {
     this.db.object('/orders/' + orderId).update({
       read: true

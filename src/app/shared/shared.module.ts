@@ -8,6 +8,7 @@ import { DataTableModule } from 'angular5-data-table';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
@@ -31,6 +32,7 @@ import { ProductFilterComponent } from 'app/shopping/components/products/product
     AngularFireAuthModule,
     NgxGalleryModule,
     NgbModule.forRoot(),
+    NgxImageZoomModule.forRoot(),
     RouterModule
   ],
   declarations: [
@@ -44,6 +46,7 @@ import { ProductFilterComponent } from 'app/shopping/components/products/product
     CommonModule,
     FormsModule,
     DataTableModule,
+    NgxImageZoomModule.forRoot().ngModule,
     MarketingComponent,
     AngularFireDatabaseModule,
     AngularFireAuthModule,

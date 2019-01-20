@@ -40,9 +40,9 @@ export class AuthService {
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
     await this.afAuth.auth.signInWithEmailAndPassword(email, password)
-    .catch(error => {
-      this.errorLogin = error.message;
-    });
+      .catch(error => {
+        this.errorLogin = error.message;
+      });
   }
 
   async registerEmailPassword(formRegister, email, password) {
@@ -51,22 +51,22 @@ export class AuthService {
     let confirmPassword = formRegister.value.confirmPassword;
     let name = formRegister.value.name;
     await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-    .catch(error => {
-      this.errorRegister = error.message;
-    });
+      .catch(error => {
+        this.errorRegister = error.message;
+      });
   }
 
   logout() {
     this.afAuth.auth.signOut();
   }
 
-  get appUser$() : Observable<AppUser> {
+  get appUser$(): Observable<AppUser> {
     return this.user$
-    .switchMap(user => {
-      if (user) return this.userService.get(user.uid);
+      .switchMap(user => {
+        if (user) return this.userService.get(user.uid);
 
-      return Observable.of(null);
-    });
+        return Observable.of(null);
+      });
   }
 
 }
