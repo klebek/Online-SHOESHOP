@@ -39,9 +39,16 @@ export class AdminProductsComponent implements OnDestroy {
       .then(items => this.items = items);
   }
 
-  filter(query: string) {
+  filterByName(query: string) {
     let filteredProducts = (query) ?
       this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) : 
+      this.products;
+      this.initializeTable(filteredProducts);
+  }
+
+  filterById(query: string) {
+    let filteredProducts = (query) ?
+      this.products.filter(p => p.$key.toLowerCase().includes(query.toLowerCase())) : 
       this.products;
       this.initializeTable(filteredProducts);
   }

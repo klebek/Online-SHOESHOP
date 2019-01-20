@@ -1,5 +1,5 @@
 <!-- <div class="row">
-  <div class="col">
+  <div class="col-sm">
     <table class="table" *ngIf="orders">
       <thead>
         <tr>
@@ -73,13 +73,19 @@
             </div>
           </div>
           <div class="footer">
-            <h3>Total price: {{ (1 - (item.product.discount / 100)) * item.product.price * item.quantity |
-              currency:'USD':'symbol'}}</h3>
+            <div class="row">
+              <h3>Price: {{ (1 - (item.product.discount / 100)) * item.product.price * item.quantity |
+                currency:'USD':'symbol'}}</h3>
+            </div>
+            <div class="row">
+              <p>Status: Ready to expedite<p></p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="row row-button"><a routerLink="/my/orders"><button class="btn btn-defult btn-sm">Back to orders</button></a></div>
     </div>
-    <div class="col-sm col-sm-image">
+    <div class="col-sm col-sm-image sticky-top">
       <div class="caption">
         <div class="small-text">
           <span>every week</span>

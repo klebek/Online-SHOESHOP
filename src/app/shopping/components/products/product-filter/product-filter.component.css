@@ -57,7 +57,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 .radios {
     background-color: #f8f8f8;
-    border-radius: 5px;
+    border-radius: 0;
     width: 100%;
     cursor: pointer;
 }
@@ -77,14 +77,14 @@ select.form-control:not([size]):not([multiple]) {
     color: white;
 }
 .radio-round-left {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     width: 50%;
     text-align: center;
 }
 .radio-round-right {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     width: 50%;
     text-align: center;
 }

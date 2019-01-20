@@ -1,4 +1,4 @@
-.col, .col-4, .col-6 {
+.col-sm, .col-4, .col-6 {
     margin-left: 0px;
     padding-left: 0;
     padding-right: 0;
@@ -41,7 +41,7 @@
 .card {
     border: none;
     margin-bottom: 40px;
-    border-radius: 20px;
+    border-radius: 0;
 }
 .card-img {
     vertical-align: middle;
@@ -71,16 +71,16 @@
     flex-direction: row;
 }
 .row-forms {
-    margin-top: 20px;
+    margin-top: 4rem;
 }
 .form-sign-in {
     background-color: #eeeeee;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 0;
 }
 .form-sign-up {
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 0;
 }
 .col-sm-6, .col-sm-12 {
     padding-left: 10px;

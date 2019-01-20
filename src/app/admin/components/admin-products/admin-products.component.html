@@ -1,42 +1,34 @@
 <div class="container">
-<p>
-    <a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
-</p>
-<p>
-    <input
-    #query
-    (keyup)="filter(query.value)"
-    type="text" class="form-control" placeholder="Search...">
-</p>
+    <p>
+        <a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
+    </p>
+    <div class="row">
+        <div class="col-sm-6"><input #queryId (keyup)="filterById(queryId.value)" type="text" class="form-control"
+                placeholder="Search by id..."></div>
+        <div class="col-sm-6"><input #queryName (keyup)="filterByName(queryName.value)" type="text" class="form-control"
+                placeholder="Search by name..."></div>
+    </div>
 
-<data-table
-    [items]="items"
-    [itemCount]="itemCount"
-    [header]="false"
-    (reload)="reloadItems($event)">
-    <data-table-column
-        [property]="'title'"
-        [header]="'Title'"
-        [sortable]="true"
-        [resizable]="true">
-        <ng-template #dataTableCell let-item="item">
-            {{ item.title }}
-        </ng-template>
-    </data-table-column>
-    <data-table-column
-        [property]="'price'"
-        [header]="'Price'"
-        [sortable]="true"
-        [resizable]="true">
-        <ng-template #dataTableCell let-item="item">
-            {{ item.price | currency:'USD':'symbol' }}
-        </ng-template>
-    </data-table-column>
-    <data-table-column
-        [property]="'$key'">
-        <ng-template #dataTableCell let-item="item">
+    <data-table [items]="items" [itemCount]="itemCount" [header]="false" (reload)="reloadItems($event)">
+        <data-table-column [property]="'id'" [header]="'ID'" [sortable]="true" [resizable]="true">
+            <ng-template #dataTableCell let-item="item">
+                {{ item.$key | slice:10:15 | uppercase }}
+            </ng-template>
+        </data-table-column>
+        <data-table-column [property]="'title'" [header]="'Title'" [sortable]="true" [resizable]="true">
+            <ng-template #dataTableCell let-item="item">
+                {{ item.title }}
+            </ng-template>
+        </data-table-column>
+        <data-table-column [property]="'price'" [header]="'Price'" [sortable]="true" [resizable]="true">
+            <ng-template #dataTableCell let-item="item">
+                {{ item.price | currency:'USD':'symbol' }}
+            </ng-template>
+        </data-table-column>
+        <data-table-column [property]="'$key'">
+            <ng-template #dataTableCell let-item="item">
                 <a [routerLink]="['/admin/products/', item.$key]"><button class="btn btn-sm btn-default">Edit</button></a>
-        </ng-template>
-    </data-table-column>
-</data-table>
+            </ng-template>
+        </data-table-column>
+    </data-table>
 </div>

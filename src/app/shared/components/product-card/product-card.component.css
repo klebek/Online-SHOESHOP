@@ -79,7 +79,7 @@
     margin-left: 10px;
     font-size: 1.2rem;
     font-weight: normal;
-    border-radius: calc(0.25rem - 1px);
+    border-radius: 0;
   }
   .btn-secondary {
     border-radius: 0;
