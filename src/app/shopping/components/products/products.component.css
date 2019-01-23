@@ -8,6 +8,9 @@
     margin-top: 25px;
     margin-bottom: 30px;
 }
+.alert {
+    border: none;
+}
 .py-2 {
     outline: hidden;
     box-shadow: none;

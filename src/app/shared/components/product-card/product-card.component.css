@@ -89,6 +89,10 @@
     top: 90%;
 }
 
+ngx-image-zoom /deep/ .ngxImageZoomContainer {
+  width: inherit !important;
+}
+
 ngx-gallery /deep/ .ngx-gallery-image {
     background-position: center;
     background-repeat: no-repeat;
