@@ -1,12 +1,17 @@
 <a class="dropdown-item dropdown-item-user" href="#" *ngIf="hamburger">{{ appUser.email }}</a>
-<a *ngIf="cart && hamburger" class="dropdown-item dropdown-item-user" [class.cart-active]="cart.totalItemsCount > 0"
-  routerLink="/shopping-cart">
-  Items in your shopping cart: {{ cart.totalItemsCount }}
-</a>
-<a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+<ng-container *ngIf="hamburger">
+  <a *ngIf="cart$ | async as cart" class="dropdown-item dropdown-item-user"
+    [class.cart-active]="cart.totalItemsCount > 0" routerLink="/shopping-cart">
+    Items in your shopping cart: {{ cart.totalItemsCount }}
+  </a>
+</ng-container>
+<a class="dropdown-item dropdown-item-grey" routerLink="/my/orders"><i class="fas fa-cart-arrow-down"></i>My Orders</a>
 <ng-container *ngIf="appUser.isAdmin">
-  <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-  <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+  <a class="dropdown-item dropdown-item-grey" routerLink="/admin/orders"><i class="fas fa-user-edit"></i>Manage
+    Orders</a>
+  <a class="dropdown-item dropdown-item-grey" routerLink="/admin/products"><i class="fas fa-edit"></i>Manage
+    Products</a>
 </ng-container>
 <div class="dropdown-divider"></div>
-<a routerLink="/" class="dropdown-item" (click)="logout()">Log Out</a>
+<a routerLink="/" class="dropdown-item dropdown-item-grey" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Log
+  Out</a>

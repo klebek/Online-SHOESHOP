@@ -7,7 +7,7 @@
     <div ngbDropdown *ngIf="appUser; else anonymousUserMobile" class="hamburger-menu">
       <span class="hamburger-icon" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-bars"></i></span>
       <div ngbDropdownMenu class="collapse navbar-collapse" aria-labelledby="dropdownBasic1">
-        <dropdown-menus *ngIf="cart$ | async as cart" [cart]="cart" [hamburger]="true" [appUser]="appUser"></dropdown-menus>
+        <dropdown-menus [hamburger]="true" [appUser]="appUser"></dropdown-menus>
       </div>
     </div>
 
