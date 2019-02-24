@@ -1,19 +1,29 @@
-.thumbnail-product { 
-    width: 90px;
-    height: 90px;
-    border-radius: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-  
-.card { 
-    margin-bottom: 80px;
+.thumbnail-product {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
 }
-.table th, .table td {
-    vertical-align: middle;
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.card-body p {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card {
+  margin-bottom: 80px;
+}
+.table th,
+.table td {
+  vertical-align: middle;
 }
 h1 {
-    font-family: "adineuePROKZ-Bold";
+  font-family: "adineuePROKZ-Bold";
 }
 .thumbnail {
   font-family: "adineuePROKZ-Black";
@@ -34,14 +44,13 @@ h1 {
   font-family: "adineuePROKZ-Bold";
   font-size: 24px;
 }
-.btn {
-  margin-top: 10px;
+.footer {
+  padding-top: 25px;
 }
 .btn-default {
   color: 161616;
   background: white;
   outline: 0;
-  margin-top: 15px;
 }
 .btn-primary {
   margin-left: 10px;

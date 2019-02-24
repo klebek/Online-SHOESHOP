@@ -1,24 +1,25 @@
-<div class="card" [class.card-new]="product.thenew">
-  <div *ngIf="product.photo1big && showPreview" [style.backgroundImage]="'url(' + product.photo1big + ')'" class="card-img-top"></div>
+<div class="card">
+  <ng-container #badges>
+    <div *ngIf="product.sale && !product.thenew" class="card-badge card-badge-sale">
+      <i class="fas fa-bullhorn"></i>Sale
+    </div>
+    <div *ngIf="!product.sale && !product.thenew" class="card-badge card-badge-nosale">
+      shoeshop
+    </div>
+    <div *ngIf="product.thenew" class="card-badge card-new" [class.card-badge-nosale-new]="product.thenew">
+      <i class="fas fa-exclamation-circle"></i> New
+    </div>
+  </ng-container>
+  <div *ngIf="product.photo1big && showPreview" [style.backgroundImage]="'url(' + product.photo1big + ')'"
+    class="card-img-top"></div>
   <a [routerLink]="['/product/', product.$key]">
-    <!-- <img *ngIf="product.photo1 && showImage" [src]="product.photo1" class="card-img-zoom"> -->
-    <!--<div *ngIf="product.photo1big && showImage" [style.backgroundImage]="'url(' + product.photo1big + ')'" class="card-img-top"></div>-->
-
-    <ngx-image-zoom *ngIf="product.photo1big && showImage" [thumbImage]="product.photo1small" [fullImage]="product.photo1big" [magnification]="0.5"></ngx-image-zoom>
-
+    <ngx-image-zoom *ngIf="product.photo1big && showImage" [thumbImage]="product.photo1small"
+      [fullImage]="product.photo1big" [magnification]="0.5"></ngx-image-zoom>
     <ngx-gallery *ngIf="showGallery" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
   </a>
-  <div *ngIf="product.sale && !product.thenew" class="card-header card-header-sale">
-      <i class="fas fa-bullhorn"></i>Sale
-  </div>
-  <div *ngIf="!product.sale && !product.thenew" class="card-header card-header-nosale">
-    shoeshop
-  </div>
-  <div *ngIf="product.thenew" class="card-header card-header-nosale" [class.card-header-nosale-new]="product.thenew">
-    <i class="fas fa-exclamation-circle"></i> THE NEW <i class="fas fa-exclamation-circle"></i>
-  </div>
   <div *ngIf="showActions && shoppingCart" class="card-footer">
-    <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
+    <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity" (click)="addToCart()"
+      class="btn btn-secondary btn-block">
       <i class="fas fa-cart-plus"></i>Add to Cart</button>
     <ng-template #updateQuantity>
       <product-quantity [product]="product" [shopping-cart]="shoppingCart">
@@ -41,7 +42,9 @@
           </span>
         </div>
         <div *ngIf="category$ | async as category" class="col-sm col-category-logo">
-          <a (click)="onTop()" *ngIf="category.name" routerLink="/" [queryParams]="{ category: category.$key }"><img *ngIf="category.logo" [src]="category.logo" class="category-logo" [class.category-logo-new]="product.thenew"></a>
+          <a (click)="onTop()" *ngIf="category.name" routerLink="/" [queryParams]="{ category: category.$key }"><img
+              *ngIf="category.logo" [src]="category.logo" class="category-logo"
+              [class.category-logo-new]="product.thenew"></a>
         </div>
       </div>
     </div>

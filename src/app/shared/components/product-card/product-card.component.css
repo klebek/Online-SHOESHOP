@@ -12,9 +12,9 @@
   }
   /* CARD NEW */
   .card-new {
-    background-image: url('../../../../assets/images/bg_new.jpg');
+    background-color: #132d4a;
   }
-  .card-header-nosale-new {
+  .card-badge-nosale-new {
     color: white !important;
   }
   /* END CARD NEW */
@@ -53,12 +53,12 @@
   .strike-out {
     text-decoration: line-through;
   }
-  .card-header-nosale {
+  .card-badge-nosale {
     background-color: transparent;
     color: rgb(219, 219, 219);
     border-color: transparent;
   }
-  .card-header-sale {
+  .card-badge-sale {
     background-color: #dc3545;
     color: white;
     border-color: #dc3545;
@@ -66,7 +66,7 @@
   .col-price .card-text {
     font-size: 18px;
   }
-  .card-header {
+  .card-badge {
     text-align: center;
     padding: 10px;
     /* -webkit-clip-path: polygon(0 0, 100% 1%, 100% 80%, 50% 100%, 0 80%);
